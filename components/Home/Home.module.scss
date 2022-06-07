@@ -1,0 +1,26 @@
+.main
+{
+    position: absolute;
+    z-index: 0;
+    transform: translateY(100vh);
+    background: white;
+    min-height: 100vh;
+    @keyframes animateMain {
+        from{
+            transform: translateY(100vh);
+        }to{
+            transform: translateY(0);
+        }
+    }
+    
+    animation: animateMain 2s forwards cubic-bezier( 0.76, 0.03, 0.14, 1.01 );
+
+    position: relative;
+
+}
+
+.main
+{
+    position: relative;
+    min-height: 200vh;
+}
