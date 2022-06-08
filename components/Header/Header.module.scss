@@ -7,6 +7,7 @@
     padding: 2rem 0;
 }
 
+
 .header
 {
     width: 95%;
@@ -17,111 +18,99 @@
 
 .menuBtn
 {
-    width: 30px;
-    height: 20px;   
-    position: relative;
+    min-width: 80px;
+    width: 80px;
+    height: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: none;
-    background: none;
     outline: none;
+    background: transparent;
     cursor: pointer;
-
     span{
-        position: absolute;
         display: block;
+        height: 1px;
         width: 100%;
-        height: 3px;
-        background: black;
-        border-radius: 1.5px;
-    }
-    span:last-child
-    {
-        bottom: 4px;
-    }
-    span:first-child
-    {
-        top: 3px;
-    }
-
-    &.active
-    {
-        span:first-child
+        position: relative;
+        overflow: hidden;
+        &::before,&::after
         {
-            animation: animateSpan1 .3s forwards;
-            @keyframes animateSpan1 {
-                from{
-                    transform: rotate(0deg) translate(0,0);
-                }to{    
-                    transform: rotate(-45deg) translate(3px,2px);
-                }
-            }
-        }   
-        span:last-child
-        {
-            animation: animateSpan2 .3s forwards;
-            transform-origin: right;
-            @keyframes animateSpan2 {
-                from{
-                    transform: rotate(0deg);
-                }to{    
-                    transform: rotate(45deg);
-                }
-            }
-        }   
-    }
-    &.inactive
-    {
-        span:first-child
-        {
-            animation: desanimateSpan1 .3s forwards;
-            @keyframes desanimateSpan1 {
-                from{
-                    transform: rotate(-45deg) translate(3px,2px);
-                }to{    
-                    transform: rotate(0deg) translate(0,0);
-                }
-            }
-        }   
-        span:last-child
-        {
-            animation: desanimateSpan2 .3s forwards;
-            transform-origin: right;
-            @keyframes desanimateSpan2 {
-                from{
-                    transform: rotate(45deg);
-                }to{    
-                    transform: rotate(0deg);
-                }
-            }
-        }   
-    }
-
-}
-
-.headerMenu
-{
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    background: darkgray;
-    opacity: 0;
-    animation: amenu .4s forwards;
-    @keyframes amenu {
-        from{
-            opacity: 0;
-        }to{
-            opacity: 1;
+            content: "";   
+            position: absolute;
+            height: 1px;
+            background: black;
         }
     }
 
-    &.inactive
+    span:first-child
     {
-        animation: dmenu .4s forwards;
-        @keyframes dmenu {
-            from{
-                opacity: 1;
-            }to{
-                opacity: 0;
-            }
-        }   
+        &::before
+        {
+            left: 0;
+            right: 0;
+            transform-origin: left;
+            transform:translateX(0);
+            transition: transform .4s ease-in-out;
+        }
+        &::after
+        {
+            left: 200%;
+            right: -300%;
+            transform-origin: right;
+            transform: translateX(0);
+            transition: transform .4s ease-in-out;
+        }
     }
+
+    span:last-child
+    {
+        &::before
+        {
+            left: -300%;
+            right: 200%;
+            width: 100%;
+            transform-origin: left;
+            transform:translateX(0);
+            transition: transform .4s ease-in-out;
+        }
+        &::after
+        {
+            width: 100%;
+            left: 0;
+            right: 0;
+            transform-origin: right;
+            transform: translateX(0);
+            transition: transform .4s ease-in-out;
+        }
+    }
+
+    &:hover
+    {
+        span:first-child
+        {
+            &::before
+            {
+                transform:translateX(-300%);
+            }
+            &::after
+            {
+                transform:translateX(-100%);
+            }
+            
+        }
+        span:last-child
+        {
+            &::before
+            {
+                transform:translateX(300%);
+            }
+            &::after
+            {
+                transform:translateX(100%);
+            }
+            
+        }
+    }
+
 }

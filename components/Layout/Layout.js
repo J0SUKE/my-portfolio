@@ -1,18 +1,33 @@
 import Introduction from "../Introduction/Introduction"
 import Home from "../Home/Home"
-import { useEffect,useState } from "react"
+import React,{ useEffect,useRef,useState ,useContext} from 'react';
+import HeaderMenu from "../HeaderMenu/HeaderMenu";
+
+export const HeaderContext = React.createContext();
+
 
 export default function Layout() {
 
   const [home,setHome] = useState(false);
 
-  // useEffect(()=>{
-  //   let timer = setTimeout(() => {
-  //       setHome(true);
-  //   }, 4700);
+  const [menuActive,setMenuActive] = useState();
+  const menuBtn = useRef();
+  const menu = useRef();
+      
+  const HeaderContextValue = {
+      menuActive,
+      setMenuActive,
+      menuBtn,
+      menu
+  }
 
-  //   return ()=>clearTimeout(timer);
-  // },[]);
+  useEffect(()=>{
+    let timer = setTimeout(() => {
+        setHome(true);
+    }, 5000);
+
+    return ()=>clearTimeout(timer);
+  },[]);
 
   return (
     <>
@@ -20,10 +35,22 @@ export default function Layout() {
         {
           home && 
           (
-            <Home></Home>   
+            <HeaderContext.Provider value={HeaderContextValue}>
+              <Home></Home>
+              {
+                menuActive && <HeaderMenu/>
+              }
+            </HeaderContext.Provider>
           )
         }         */}
-        <Home></Home>
+        <HeaderContext.Provider value={HeaderContextValue}>
+            <Home></Home>
+            {
+              menuActive && <HeaderMenu/>
+            }
+        </HeaderContext.Provider>
+        
     </>
   )
 }
+

@@ -1,3 +1,5 @@
+$menu-left:#E62B33;
+
 .main
 {
     position: absolute;
@@ -19,8 +21,76 @@
 
 }
 
-.main
+.hero
 {
-    position: relative;
-    min-height: 200vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.contact_links
+{
+    position: absolute;
+    top: 15vh;
+    height: 50vh;
+    width: 30px;
+    left: 2rem;
+    z-index: 1;
+    li{
+        margin-bottom: 1rem;
+        cursor: pointer;
+        &:hover
+        {
+            svg path{
+                fill: $menu-left;
+            }
+        }
+    }
+
+    @media screen and(max-width:560px) {
+        display: none;
+    }
+}
+
+.presentation
+{
+    position: absolute;
+    z-index: 2;
+    top: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    min-width: 350px;
+    h1{
+        transform: translateY(100%);
+        opacity: 0;
+        animation: animateP .7s 1s forwards;
+        text-decoration: underline;
+    }
+    P{
+        line-height: 1.3rem;
+        margin: 1rem 0;
+        transform: translateY(100%);
+        opacity: 0;
+        &:first-of-type
+        {
+            animation: animateP .7s 1.2s forwards;
+        }
+        &:nth-of-type(2)
+        {
+            animation: animateP .7s 1.4s forwards;
+        }
+    }
+
+    @keyframes animateP {
+        from{
+            transform: translateY(100%);
+            opacity: 0;
+        }to{
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
 }
