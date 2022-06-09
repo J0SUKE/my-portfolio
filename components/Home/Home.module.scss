@@ -2,7 +2,7 @@ $menu-left:#E62B33;
 
 .main
 {
-    position: absolute;
+    position: absolute; 
     z-index: 0;
     transform: translateY(100vh);
     background: white;
@@ -19,12 +19,16 @@ $menu-left:#E62B33;
 
     position: relative;
 
-}
+    &::-webkit-scrollbar
+    {
+        display: none;
+    }
+}   
 
 .hero
 {
-    position: absolute;
-    top: 0;
+    // position: absolute;
+    // top: 0;
     width: 100%;
     height: 100vh;
 }
@@ -54,10 +58,10 @@ $menu-left:#E62B33;
     }
 }
 
-.presentation
+.Short_presentation
 {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     top: 15vh;
     left: 50%;
     transform: translateX(-50%);
@@ -99,4 +103,89 @@ $menu-left:#E62B33;
             opacity: 1;
         }
     }
+}
+
+.shortLinks
+{
+    position: absolute;
+    right: 2rem;
+    bottom: 20vh;
+    a:nth-of-type(1) li {&::before,&::after{content:".About"}}
+    a:nth-of-type(2) li {&::before,&::after{content:".Projets"}}
+    a:nth-of-type(3) li {&::before,&::after{content:".FAQ"}}
+    
+    li{
+        margin: 1rem 0;
+        font-size: 1.2rem;
+        height: 1.5rem;
+        overflow: hidden;
+        width: 7rem;
+        position: relative;
+        &::before
+        {
+            position: absolute;
+            top: -100%;
+            right: 0;
+            transition: transform .3s;
+        }
+        &::after
+        {
+            position: absolute;
+            top: 0%;
+            right: 0;
+            transition: transform .3s;
+        }
+
+        &:hover
+        {
+            &::before{transform: translateY(100%);}
+            &::after{transform: translateY(100%);}
+        }
+    }
+}
+
+.content{
+    height: 100vh;
+    position: absolute;
+    top: 100vh;
+    background: rgb(244, 244, 244);
+    width: 100%;
+    box-shadow: 0 -10px 50px rgba(0,0,0,0.3);
+}
+
+.presentation   
+{
+
+    width: 80%;
+    margin: 7rem auto;
+
+    h1{
+        text-align: center;
+        text-decoration: underline;
+        font-size: 3rem;
+        margin: 3rem 0;
+    }
+
+    &__content
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__img{
+            width: 30%;
+            img{
+                width: 100%;
+                border-radius: 1rem;
+            }
+        }
+        &__text
+        {
+            width: 60%;
+            color: rgb(82, 82, 82);
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+        }
+    }
+    
 }
