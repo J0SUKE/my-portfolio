@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <header className={styles.headerContainer}>
             <div className={styles.header}>
-                <div></div>
+                <div><strong>JEAN</strong></div>
                 <MenuButton/>
             </div>
         </header>

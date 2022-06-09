@@ -74,6 +74,7 @@ $menu-left:#E62B33;
         margin: 1rem 0;
         transform: translateY(100%);
         opacity: 0;
+        color: rgb(70, 70, 70);
         &:first-of-type
         {
             animation: animateP .7s 1.2s forwards;
@@ -82,6 +83,11 @@ $menu-left:#E62B33;
         {
             animation: animateP .7s 1.4s forwards;
         }
+    }
+
+    @media screen and(max-width:560px)
+    {
+        width: 90%;   
     }
 
     @keyframes animateP {

@@ -38,8 +38,8 @@ export default function Home() {
           </div>
           <div className={styles.presentation}>
             <h1>Développeur React et intégrateur Web</h1>
-            <p>Salut ! Moi c'est Jean, <strong>développeur</strong> Autodidacte et passionné par les technologies du web.</p>
-            <p>Adepte du <strong>modern design</strong> et du <strong>clean Code</strong> , mon objectif est de fournir à mes clients la meilleur <strong>expérience utilisateur</strong> !</p>
+            <p>Salut 🖐! Moi c'est Jean, développeur <strong>autodidacte</strong> et passionné par les technologies du web. 💻</p>
+            <p>Adepte du <strong>modern design</strong>🎨 et du <strong>clean Code</strong> , mon objectif est de fournir à mes clients la meilleur <strong>expérience utilisateur</strong> 🚀!</p>
           </div>
           <Canvas/>
         </section>

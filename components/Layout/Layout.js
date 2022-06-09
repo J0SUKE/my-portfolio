@@ -31,7 +31,7 @@ export default function Layout() {
 
   return (
     <>
-        {/* <Introduction/>
+        <Introduction/>
         {
           home && 
           (
@@ -42,13 +42,13 @@ export default function Layout() {
               }
             </HeaderContext.Provider>
           )
-        }         */}
-        <HeaderContext.Provider value={HeaderContextValue}>
+        }        
+        {/* <HeaderContext.Provider value={HeaderContextValue}>
             <Home></Home>
             {
               menuActive && <HeaderMenu/>
             }
-        </HeaderContext.Provider>
+        </HeaderContext.Provider> */}
         
     </>
   )

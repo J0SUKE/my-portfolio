@@ -81,6 +81,25 @@ export default function Canvas() {
     floor.rotateX(-Math.PI/2);
     floor.position.y = -1.2
     scene.add(floor);
+    
+    const texture = new THREE.TextureLoader().load( "/images/screen.png" );
+    
+
+    let screen = new Mesh(
+        new THREE.PlaneGeometry(0.42,0.26,1),
+        new THREE.MeshBasicMaterial({
+            map:texture,
+            toneMapped:false
+        })
+    )
+    screen.position.x-=0.11;
+    screen.position.y-=0.098;
+    screen.position.z-=0.003;
+    screen.rotateY(Math.PI/2);
+
+    group.add(screen);
+
+    // 3D models ----------------------
 
     const loader = new GLTFLoader();
 
@@ -196,6 +215,19 @@ export default function Canvas() {
     )
 
     loader.load(
+        '/models/chair/chair.glb',
+        (gltf)=>{
+            
+            gltf.scene.children[0].scale.set(0.03,0.03,0.03);
+            gltf.scene.children[0].position.set(-5.5,-1.2,-10);
+            gltf.scene.children[0].rotateY(-Math.PI/2)
+            group.add(gltf.scene.children[0])
+            
+            console.log(gltf);
+        }
+    )
+
+    loader.load(
         '/models/lamp/lamp.glb',
         (gltf)=>{
             gltf.scene.scale.set(0.4,0.4,0.4);
@@ -217,6 +249,18 @@ export default function Canvas() {
         }
     )
 
+    loader.load(
+        '/models/headphones/headphones.glb',
+        (gltf)=>{
+            gltf.scene.scale.set(0.004,0.004,0.004);
+            gltf.scene.rotateY(Math.PI/8);
+            gltf.scene.rotateX(Math.PI/1.45);
+            gltf.scene.position.set(0.1,-0.23,0.5);
+            group.add(gltf.scene);
+        }
+    )
+
+    // camera -------------
 
     camera.position.z = 1.1;
     camera.position.y = 0.3;
@@ -228,7 +272,6 @@ export default function Canvas() {
     controls.update();
 
     renderer.render( scene, camera );
-
 
 
     function animate() {

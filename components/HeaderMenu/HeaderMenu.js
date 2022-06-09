@@ -49,9 +49,9 @@ export default function HeaderMenu() {
             <div className={styles.header_menu__left}>
   
             </div>
-            {/* <div className={styles.header_menu__bottom_img}>
+            <div className={styles.header_menu__bottom_img}>
                 <img src="/images/menuBottom.jpg" alt=""/>
-            </div> */}
+            </div>
         </menu>
     )
   }

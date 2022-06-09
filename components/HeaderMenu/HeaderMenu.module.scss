@@ -1,5 +1,6 @@
 
-$menu-left:#E62B33;
+//$menu-left:#E62B33;
+$menu-left:#2c2c2c;
 $menu-right:rgb(234, 234, 234);
 
 .header_menu
@@ -41,7 +42,7 @@ $menu-right:rgb(234, 234, 234);
         span{
             display: block;
             position: absolute;
-            height: 1px;
+            height: 3px;
             width: 141px;
             background: black;
             right: 0;
@@ -50,13 +51,13 @@ $menu-right:rgb(234, 234, 234);
         {
             top: 0;
             transform-origin: right;
-            transform: rotate(-45deg) scale(0);
+            transform: rotate(-45deg) scaleX(0);
         }
         span:last-of-type
         {
             bottom: 0;
             transform-origin: right;
-            transform: rotate(45deg) scale(0);
+            transform: rotate(45deg) scaleX(0);
         }
     }
 
@@ -65,16 +66,16 @@ $menu-right:rgb(234, 234, 234);
         
         @keyframes animateCrossRight {
             from{
-                transform: rotate(-45deg) scale(0);
+                transform: rotate(-45deg) scaleX(0);
             }to{
-                transform: rotate(-45deg) scale(1);
+                transform: rotate(-45deg) scaleX(1);
             }
         }
         @keyframes animateCrossLeft {
             from{
-                transform: rotate(45deg) scale(0);
+                transform: rotate(45deg) scaleX(0);
             }to{
-                transform: rotate(45deg) scale(1);
+                transform: rotate(45deg) scaleX(1);
             }
         }
         
@@ -122,6 +123,7 @@ $menu-right:rgb(234, 234, 234);
                 transform: translateY(100%);
                 font-size: 3rem;
                 font-weight: 300;
+                color: rgb(149, 149, 149);
                 transition: color .3s;
                 &:hover
                 {
@@ -154,7 +156,7 @@ $menu-right:rgb(234, 234, 234);
                 font-weight: 300;
                 transform:translateY(100%);
                 span{
-                    color: #E21F2C;
+                    color: $menu-left;
                     margin-left: .5rem;
                 }
                 position: relative;
