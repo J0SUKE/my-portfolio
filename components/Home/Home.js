@@ -73,7 +73,7 @@ function ParallaxContext() {
                     </div>
                     <div className={styles.Short_presentation}>
                       <h1>React developer and Web Integrator</h1>
-                      <p>Hi There 🖐! I'm Jean, <strong>self taught</strong> front-end developer who is very enthusiastic about the latest web technologies 💻</p>
+                      <p>Hi There 🖐! I&apos;m Jean, <strong>self taught</strong> front-end developer who is very enthusiastic about the latest web technologies 💻</p>
                       <p>I am passionate about <strong>modern design</strong>🎨 and <strong>clean Code</strong> ,threfore my objective is to provide the best <strong>User Experience</strong> 🚀!</p>
                     </div>
                     <Canvas/>
