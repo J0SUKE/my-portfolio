@@ -15,6 +15,7 @@
     "react-dom": "18.1.0",
     "react-spring": "^9.4.5",
     "sass": "^1.52.2",
+    "swiper": "^8.2.2",
     "three": "^0.141.0"
   },
   "devDependencies": {
