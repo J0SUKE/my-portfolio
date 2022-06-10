@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import { useRef,useEffect } from 'react';
 import { Mesh } from 'three';
+import gsap from 'gsap'
 
 export default function Canvas() {
   
@@ -263,12 +264,55 @@ export default function Canvas() {
     // camera -------------
 
     camera.position.z = 1.1;
+    //camera.position.y = 0.3;
     camera.position.y = 0.3;
     camera.position.x = 1.4;
+    
+    let animating = false;
+    let initialTop = 0;
+
+    function resetCameraPosition() {
+        const {scrollTop,clientHeight} = document.documentElement;   
+        let ratio = scrollTop/clientHeight;
+        let initailPos = 0.3-Math.sin(ratio);
+        
+        initialTop=scrollTop;
+        animating = true;
+        gsap.to(
+            camera.position,
+            {
+                duration: 1.5,
+                ease: 'power2.inOut',
+                x: '1.4',
+                z: '1.1',
+                y: initailPos,
+                onComplete:()=>{
+                    animating=false;
+                }
+            }
+        )
+    }
+
+    canvas.current.addEventListener("mouseup",resetCameraPosition)
+    canvas.current.addEventListener("touchend",resetCameraPosition);
+
+
+    window.addEventListener("scroll",()=>{
+        const {scrollTop,clientHeight} = document.documentElement;   
+
+        let ratio = scrollTop/clientHeight;
+        if (animating) {
+            window.scrollTo(0,initialTop);
+        }
+        if (ratio<=1 && !animating) {
+            camera.position.y = 0.3-Math.sin(ratio);    
+        }
+    })
 
     const controls = new OrbitControls( camera, canvas.current );
     controls.enableZoom =false;
     controls.enableDamping =true;
+    controls.enablePan = false;
     controls.update();
 
     renderer.render( scene, camera );

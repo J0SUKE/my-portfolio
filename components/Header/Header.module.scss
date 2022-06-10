@@ -29,7 +29,11 @@
     div{
         transform: translateY(-18%);
         font-size: 1.3rem;
-        position: relative;        
+        position: relative;
+        p{
+            color: black;      
+            font-weight: 600;
+        }
     }
 }
 
