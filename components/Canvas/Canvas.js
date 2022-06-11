@@ -37,24 +37,10 @@ export default function Canvas() {
     renderer.shadowMap.enabled = true
     renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
-    window.addEventListener('resize', () =>
-    {
-        // Update sizes
-        sizes.width=canvasContainer.current.getBoundingClientRect().width;
-        sizes.height=canvasContainer.current.getBoundingClientRect().height;
-        const{width,height} = sizes;
-        // Update camera
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-
-        // Update renderer
-        renderer.setSize(width, height);
-    })
-
     const light = new THREE.AmbientLight( 'white',0.5); // soft white light
     scene.add( light );
 
-    const directionalLight = new THREE.DirectionalLight( 0xffffff, 4 );
+    const directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
     directionalLight.castShadow = true
     directionalLight.position.y = 2;
     directionalLight.position.z = -1;
@@ -69,7 +55,6 @@ export default function Canvas() {
     // Models -------------
     let group = new THREE.Group();
     scene.add(group);
-    // Instantiate a loader
 
     const floor = new Mesh(
         new THREE.PlaneGeometry(7,7,7),
@@ -102,6 +87,7 @@ export default function Canvas() {
 
     // 3D models ----------------------
 
+    // Instantiate a loader
     const loader = new GLTFLoader();
 
     const updateAllMaterials = () =>
@@ -224,7 +210,6 @@ export default function Canvas() {
             gltf.scene.children[0].rotateY(-Math.PI/2)
             group.add(gltf.scene.children[0])
             
-            console.log(gltf);
         }
     )
 
@@ -263,10 +248,51 @@ export default function Canvas() {
 
     // camera -------------
 
-    camera.position.z = 1.1;
-    //camera.position.y = 0.3;
-    camera.position.y = 0.3;
-    camera.position.x = 1.4;
+    let camPosition = {
+        x:1.1,
+        y:0.3,
+        z:1.4,
+    }
+
+    if (window.innerWidth<=700) {
+        camPosition.x = 2;
+        camPosition.z =2;   
+    }
+
+    window.addEventListener('resize', () =>
+    {
+        // Update sizes
+        sizes.width=canvasContainer.current.getBoundingClientRect().width;
+        sizes.height=canvasContainer.current.getBoundingClientRect().height;
+        const{width,height} = sizes;
+        // Update camera
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        if (window.innerWidth<=700) {
+            camPosition.x = 2;
+            camPosition.z =2;   
+        }
+        else
+        {
+            camPosition.x = 1.1;
+            camPosition.z =1.4;   
+        }
+
+        camera.position.x = camPosition.x;
+        camera.position.z = camPosition.z;
+
+
+        // Update renderer
+        renderer.setSize(width, height);
+    })
+
+    
+
+    const{x,y,z} = camPosition;
+
+    camera.position.z = x;
+    camera.position.y = y;
+    camera.position.x = z;
     
     let animating = false;
     let initialTop = 0;
@@ -283,8 +309,8 @@ export default function Canvas() {
             {
                 duration: 1.5,
                 ease: 'power2.inOut',
-                x: '1.4',
-                z: '1.1',
+                x: camPosition.x,
+                z: camPosition.z,
                 y: initailPos,
                 onComplete:()=>{
                     animating=false;
@@ -293,11 +319,7 @@ export default function Canvas() {
         )
     }
 
-    canvas.current.addEventListener("mouseup",resetCameraPosition)
-    canvas.current.addEventListener("touchend",resetCameraPosition);
-
-
-    window.addEventListener("scroll",()=>{
+    function handleScroll() {
         const {scrollTop,clientHeight} = document.documentElement;   
 
         let ratio = scrollTop/clientHeight;
@@ -307,7 +329,11 @@ export default function Canvas() {
         if (ratio<=1 && !animating) {
             camera.position.y = 0.3-Math.sin(ratio);    
         }
-    })
+    }
+
+    canvas.current.addEventListener("mouseup",resetCameraPosition)
+    canvas.current.addEventListener("touchend",resetCameraPosition);
+    window.addEventListener("scroll",handleScroll)
 
     const controls = new OrbitControls( camera, canvas.current );
     controls.enableZoom =false;
