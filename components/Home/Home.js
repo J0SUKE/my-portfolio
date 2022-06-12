@@ -3,11 +3,13 @@ import Header from '../Header/Header';
 import Canvas from '../Canvas/Canvas';
 import { useEffect,useRef } from 'react';
 import Link from 'next/link';
+import Projects from '../Projects/Projects';
 
 export default function Home() {
     
   const [line1,line2,line3] = useObserveSkills(styles.active);
-  const presentation = useRef();
+  const presentationText = useRef();
+  const presentationImg = useRef();
   const content = useRef();
 
   useEffect(()=>{
@@ -23,19 +25,10 @@ export default function Home() {
       threshold:0.7
     })
 
-    observer.observe(presentation.current);
+    
 
-  },[])
-
-  useEffect(()=>{
-    function handleParallax(params) {
-      const {scrollTop,clientHeight} = document.documentElement
-      if (scrollTop/clientHeight<=1) {
-        let ratio = (scrollTop/clientHeight)*100;
-        content.current.style.transform = `translateY(${-ratio}vh)`
-
-      }
-    }
+    observer.observe(presentationText.current);
+    observer.observe(presentationImg.current);
 
   },[])
 
@@ -88,16 +81,14 @@ export default function Home() {
               </a>
         </section>      
         <section className={styles.content} ref={content}>
-          <section id="about" className={styles.presentation} ref={presentation}>
+          <section id="about" className={styles.presentation}>
               <h1>About</h1>
               <div className={styles.presentation__content}>
-                <div className={styles.presentation__content__img}>
+                <div className={styles.presentation__content__img} ref={presentationImg}>
                     <img src="/images/presentation.jpg" alt="" />
                 </div>
-                <div className={styles.presentation__content__text}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, quo amet neque sint dolorem blanditiis corporis, id obcaecati, totam placeat laboriosam! Quidem cumque voluptatum et vero cum, temporibus provident quisquam.
-                    Nemo repudiandae cumque aliquid exercitationem, dolorem ducimus porro deleniti dolorum magnam accusantium molestiae esse nesciunt est ipsa debitis tenetur maxime! Mollitia beatae magnam officiis ab doloremque quod quae a perferendis.
-                    Neque, debitis. Veniam fugiat quae facilis temporibus ducimus et reiciendis nisi porro odio sequi dolorum nostrum, dolor impedit doloribus quo voluptas sunt? Reiciendis ipsam ex porro alias officia qui eaque.
+                <div className={styles.presentation__content__text} ref={presentationText}>
+                    I am a 21 years old <strong>computer science student</strong> based in <strong>Lyon</strong>. I started learning programmig on my own in <strong>2020</strong> , started with Python then C++ then i learned Linux and basic web architecture ,and finally got into web programming , i started with HTML , CSS javascript and did some PHP , after that i chose to master <strong>Javascript</strong> so i passed the JavaScript Algorithms and Data Structures <strong>certification</strong> on freecodecamp.org that you can find <a href={'https://www.freecodecamp.org/certification/fcc58c90e68-b03b-4494-8ab1-13af0fb0cfaf/javascript-algorithms-and-data-structures'} target='_blank'>here</a>. I built some <a href="#projects">projects</a> with Vanilla Javascript and then as my projects became more complex i switched to <strong>React</strong> and fell in love with it 😍.
                 </div>
               </div>
           </section>
@@ -154,6 +145,8 @@ export default function Home() {
               </section>
 
           </section>
+
+          <Projects/>
         </section>  
       </main>
     </>

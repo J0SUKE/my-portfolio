@@ -2,6 +2,7 @@ import Introduction from "../Introduction/Introduction"
 import Home from "../Home/Home"
 import React,{ useEffect,useRef,useState ,useContext} from 'react';
 import HeaderMenu from "../HeaderMenu/HeaderMenu";
+import Cursor from "../Cursor/Cursor";
 
 export const HeaderContext = React.createContext();
 
@@ -35,21 +36,17 @@ export default function Layout() {
         {
           home && 
           (
-            <HeaderContext.Provider value={HeaderContextValue}>
-              <Home></Home>
-              {
-                menuActive && <HeaderMenu/>
-              }
-            </HeaderContext.Provider>
-          )
-        }        
-        {/* <HeaderContext.Provider value={HeaderContextValue}>
-            <Home></Home>
-            {
-              menuActive && <HeaderMenu/>
-            }
-        </HeaderContext.Provider> */}
-        
+            <>
+              {/* <Cursor lerpValue={1}/> */}
+              <HeaderContext.Provider value={HeaderContextValue}>
+                <Home></Home>
+                {
+                  menuActive && <HeaderMenu/>
+                }
+              </HeaderContext.Provider>
+            </>
+          ) 
+        }                
     </>
   )
 }

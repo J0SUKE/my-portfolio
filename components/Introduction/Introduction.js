@@ -17,7 +17,8 @@ export default function Introduction() {
                 <div>MAZOUNI</div>
             </h1>
             <h1>
-                <div>Développeur-WEB</div>
+                <div>WEB</div>
+                <div>DEVELOPER</div>
             </h1>
         </div>
     </section>

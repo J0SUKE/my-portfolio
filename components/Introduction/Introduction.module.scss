@@ -50,7 +50,7 @@
             mix-blend-mode: difference;
             height: 13vw;
             overflow: hidden;
-            
+            justify-content: space-between;
             .copyright
             {
                 font-size: 3vw;
@@ -60,26 +60,17 @@
 
             div{
                 text-transform: uppercase;
-                transform: translateY(115%);
+                transform: translateY(100%);
                 animation: animateLetter 1.2s .5s forwards;
                 @keyframes animateLetter {
                     from{
-                        transform: translateY(115%);
+                        transform: translateY(100%);
                     }
                     to{
                         transform: translateY(0%);
                     }
                 }
             }
-        }
-
-        h1:first-of-type
-        {
-            justify-content: space-between;
-        }
-        h1:last-of-type
-        {
-            justify-content: center;
         }
 
         &::before

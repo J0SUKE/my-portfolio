@@ -215,6 +215,10 @@ $menu-left:#E62B33;
         font-size: 2rem;
         margin: 3rem 0;
     }
+    a{
+        text-decoration: underline;
+        color: rgb(35, 35, 35);
+    }
 
     &__content
     {
@@ -231,6 +235,13 @@ $menu-left:#E62B33;
                 opacity: 0;
                 box-shadow: 5px 5px 10px darkgray;
             }
+            &.active
+            {
+                img{
+                    animation: appear 1s forwards;
+                }
+                
+            }
         }
         &__text
         {
@@ -240,6 +251,10 @@ $menu-left:#E62B33;
             line-height: 1.7rem;
             transform: translateY(50%);
             opacity: 0;
+            &.active
+            {
+                animation: appear 1s forwards;
+            }
         }
 
         @media screen and(max-width:800px) {
@@ -253,16 +268,6 @@ $menu-left:#E62B33;
         }
     }
 
-    &.active
-    {
-        .presentation__content
-        {
-            &__img img,&__text
-            {
-                animation: appear 1s forwards;
-            }
-        }
-    }
 
     @keyframes appear {
         from{
