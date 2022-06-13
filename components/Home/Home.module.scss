@@ -3,7 +3,7 @@ $menu-left:#E62B33;
 
 .main
 {
-    position: absolute; 
+    position: absolute;     
     z-index: 0;
     transform: translateY(100vh);
     background: white;
@@ -203,15 +203,17 @@ $menu-left:#E62B33;
     width: 100%;
 }
 
+
 .presentation   
 {
 
     width: 80%;
+    min-height: 100vh;
     margin: auto;
-    padding: 7rem 0;
+    padding-top: 5vh;
+    scroll-snap-align: center;
     h1{
         text-align: center;
-        text-decoration: underline;
         font-size: 2rem;
         margin: 3rem 0;
     }
@@ -264,6 +266,7 @@ $menu-left:#E62B33;
                 width: 100%;
                 margin-top: 2rem;
                 font-size: clamp(1rem,3vw,1.2rem);
+                padding-bottom: 5rem;
             }
         }
     }
@@ -284,14 +287,34 @@ $menu-left:#E62B33;
 .skills
 {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
+
+    &__content_container
+    {
+        width: 100%;
+        background: #000000;
+        min-height: 100vh;  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__content
+    {
+        width: 80%;
+        margin: auto;
+        color: white;
+    }
+
+    svg{
+        display: block;
+        width: 100%;
+    }
     h1{
-        text-align: center;
-        text-decoration: underline;
         font-size: 2rem;
         margin: 3rem auto;
+        align-self: flex-start;
+        justify-self: center;
     }
 
     p{

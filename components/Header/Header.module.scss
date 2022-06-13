@@ -4,7 +4,7 @@
     z-index: 99;
     top: 0;
     width: 100%;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     opacity: 0;
     animation: Headerappear 1s 1s forwards;
     transform: translateY(100%);
@@ -15,6 +15,57 @@
         }to{
             opacity: 1;
             transform: translateY(0%);
+        }
+    }
+
+    &.static
+    {
+        opacity: 1;
+        transform: translateY(0%);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.135);
+        animation: tostatic .3s forwards ;
+        @keyframes tostatic {
+            from{
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.135);
+            }to{
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+            }
+        }
+
+    }
+
+    &.scrollUp
+    {
+        opacity: 1;
+        animation:scrollUp .7s forwards;
+        @keyframes scrollUp {
+            from{
+                opacity: 1;
+                background-color: rgba(255, 255, 255, 1);
+                transform: translateY(0%);
+            }to{
+                background-color: rgba(255, 255, 255, 0);
+                opacity: 1;
+                transform: translateY(-100%);
+            }
+        }
+    }
+
+    &.scrollDown
+    {
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.135);
+        animation:scrollDown .7s forwards;
+        @keyframes scrollDown {
+            from{
+                background-color: rgba(255, 255, 255, 0);
+                opacity: 1;
+                transform: translateY(-100%);
+            }to{
+                background-color: rgba(255, 255, 255, 1);
+                opacity: 1;
+                transform: translateY(0%);
+            }
         }
     }
 }
@@ -41,7 +92,6 @@
 {
     min-width: 40px;
     width: 40px;
-    height: 30px;
     position: relative;
     border: none;
     outline: none;
@@ -87,7 +137,7 @@
 
     span:last-child
     {
-        bottom: 6px;
+        top: 1px;
         &::before
         {
             left: -300%;

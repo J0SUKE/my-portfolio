@@ -5,6 +5,7 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import { useRef,useEffect } from 'react';
 import { Mesh } from 'three';
 import gsap from 'gsap'
+import { throttle } from 'lodash';
 
 export default function Canvas() {
   
@@ -331,9 +332,9 @@ export default function Canvas() {
         }
     }
 
-    canvas.current.addEventListener("mouseup",resetCameraPosition)
-    canvas.current.addEventListener("touchend",resetCameraPosition);
-    window.addEventListener("scroll",handleScroll)
+    canvas.current.addEventListener("mouseup",throttle(()=>{resetCameraPosition()}))
+    canvas.current.addEventListener("touchend",throttle(()=>{resetCameraPosition()}));
+    window.addEventListener("scroll",throttle(()=>{handleScroll()}))
 
     const controls = new OrbitControls( camera, canvas.current );
     controls.enableZoom =false;

@@ -2,31 +2,22 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Projects.module.scss';
 
 export default function Projects() {
-  
+
     const [currentSlide,setCurrentSlide] = useState(0);
     const textSlider = useRef();
     const imagesSlider = useRef();
     const imagesContainer = useRef();
-    
+
     const max = useRef(4);
 
     function goNext() {
         if (currentSlide==max.current-1) return;
-        imagesContainer.current.classList.add(styles.next);
-        setTimeout(()=>{
-            imagesContainer.current.classList.remove(styles.next);
-        },500)
+
         setCurrentSlide(currentSlide=>currentSlide+1);
     }
 
     function goPrev() {
         if (currentSlide==0) return;
-
-        imagesContainer.current.classList.add(styles.prev);
-        setTimeout(()=>{
-            imagesContainer.current.classList.remove(styles.prev);
-        },500)
-
         setCurrentSlide(currentSlide=>currentSlide-1);
     }
 
@@ -34,9 +25,10 @@ export default function Projects() {
         textSlider.current.style.transform = `translateX(${-currentSlide*100}%)`;
         imagesSlider.current.style.transform = `translateX(${-currentSlide*100}%)`;
     },[currentSlide])
-  
+
     return (
         <section className={styles.projects} id='projects'>
+            <div className={styles.projects__container}>
             <h1>Projects</h1>
             <div className={styles.caroussel_container}>
                 <div className={styles.text_container}>
@@ -46,8 +38,14 @@ export default function Projects() {
                             <h3>#REACT.JS #REACT.ROUTER</h3>
                             <p>A fully client side E-commerce website interface, using React JS and React Router for the client Side rendering , it fetches data from a custon API.</p>
                             <div className={styles.links}>
-                                <a href="">SEE LIVE</a>
-                                <a href="">GITHUB</a>
+                                <a href="https://boutique-huawei-react.vercel.app/" target="_blank">
+                                    <p>SEE LIVE</p>
+                                    <img src="/images/arrow-up-right.svg" alt="" />
+                                </a>
+                                <a href="https://github.com/J0SUKE/boutique-huawei-react"  target="_blank">
+                                    <p>GITHUB</p>
+                                    <img src="/images/arrow-up-right.svg" alt="" />
+                                </a>
                             </div>
                         </li>
                         <li>
@@ -55,8 +53,14 @@ export default function Projects() {
                             <h3>#JAVASCRIPT</h3>
                             <p>A crypto-currencies App that fetches a third party API to get and show data about a given crypto , built with vanilla Javascript</p>
                             <div className={styles.links}>
-                                <a href="">SEE LIVE</a>
-                                <a href="">GITHUB</a>
+                                <a href="https://github.com/J0SUKE/Proton-crypto-app" target="_blank">
+                                    <p>SEE LIVE</p>
+                                    <img src="/images/arrow-up-right.svg" alt="" />
+                                </a>
+                                <a href="https://j0suke.github.io/Proton-crypto-app/" target="_blank">
+                                    <p>GITHUB</p>
+                                    <img src="/images/arrow-up-right.svg" alt="" />
+                                </a>
                             </div>
                         </li>
                         <li>
@@ -64,8 +68,14 @@ export default function Projects() {
                             <h3>#REACT.JS #NEXT.JS #STRAPI</h3>
                             <p>A Blog app with Next Js for the server side rendering (static rendering) and Strapi for the content management</p>
                             <div className={styles.links}>
-                                <a href="">SEE LIVE</a>
-                                <a href="">GITHUB</a>
+                                <a href="https://le-blog-de-jean-k6ou8skf5-jean2701.vercel.app/" target="_blank">
+                                    <p>SEE LIVE</p>
+                                    <img src="/images/arrow-up-right.svg" alt="" />
+                                </a>
+                                <a href="https://github.com/J0SUKE/blog-next-strapi" target="_blank">
+                                    <p>GITHUB</p>
+                                    <img src="/images/arrow-up-right.svg" alt="" />
+                                </a>
                             </div>
                         </li>
                         <p></p>
@@ -74,8 +84,14 @@ export default function Projects() {
                             <h3>#JAVASCRIPT #THREE JS</h3>
                             <p>A simple product page using Three js for the 3d model</p>
                             <div className={styles.links}>
-                                <a href="">SEE LIVE</a>
-                                <a href="">GITHUB</a>
+                                <a href="https://hifoam.vercel.app/" target="_blank">
+                                    <p>SEE LIVE</p>
+                                    <img src="/images/arrow-up-right.svg" alt="" />
+                                </a>
+                                <a href="https://github.com/J0SUKE/shoes-store" target="_blank">
+                                    <p>GITHUB</p>
+                                    <img src="/images/arrow-up-right.svg" alt="" />
+                                </a>
                             </div>
                         </li>
                     </ul>
@@ -86,7 +102,7 @@ export default function Projects() {
                             <img src="/images/arrow-left.svg" alt="" />
                         </button> : null
                     }
-                    
+
                     {
                         currentSlide<max.current-1 ? <button className={styles.btnNext} onClick={goNext}>
                             <img src="/images/arrow-right.svg" alt="" />
@@ -103,15 +119,17 @@ export default function Projects() {
                                 <img src="/images/proton2.png" alt="" />
                             </li>
                             <li>
-                                
+
                             </li>
                             <li>
-                                <img src="/images/hifoam1.jpg" alt="" style={{top:0 + '%',width:100 + '%'}}/>
+                                <img src="/images/hifoam1.jpg" alt="" style={{top:10+'%',height:80+'%',width:'auto'}}/>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+            </div>
+            
     </section>
   )
 }

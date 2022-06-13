@@ -37,7 +37,6 @@ export default function Layout() {
           home && 
           (
             <>
-              {/* <Cursor lerpValue={1}/> */}
               <HeaderContext.Provider value={HeaderContextValue}>
                 <Home></Home>
                 {

@@ -80,74 +80,78 @@ export default function Home() {
                 <span></span>
               </a>
         </section>      
-        <section className={styles.content} ref={content}>
-          <section id="about" className={styles.presentation}>
-              <h1>About</h1>
-              <div className={styles.presentation__content}>
-                <div className={styles.presentation__content__img} ref={presentationImg}>
-                    <img src="/images/presentation.jpg" alt="" />
-                </div>
-                <div className={styles.presentation__content__text} ref={presentationText}>
-                    I am a 21 years old <strong>computer science student</strong> based in <strong>Lyon</strong>. I started learning programmig on my own in <strong>2020</strong> , started with Python then C++ then i learned Linux and basic web architecture ,and finally got into web programming , i started with HTML , CSS javascript and did some PHP , after that i chose to master <strong>Javascript</strong> so i passed the JavaScript Algorithms and Data Structures <strong>certification</strong> on freecodecamp.org that you can find <a href={'https://www.freecodecamp.org/certification/fcc58c90e68-b03b-4494-8ab1-13af0fb0cfaf/javascript-algorithms-and-data-structures'} target='_blank'>here</a>. I built some <a href="#projects">projects</a> with Vanilla Javascript and then as my projects became more complex i switched to <strong>React</strong> and fell in love with it 😍.
-                </div>
+          <section className={styles.content} ref={content}>
+              <section id="about" className={styles.presentation}>
+            <h1>About</h1>
+            <div className={styles.presentation__content}>
+              <div className={styles.presentation__content__img} ref={presentationImg}>
+                  <img src="/images/presentation.jpg" alt="" />
               </div>
-          </section>
-
-          <section id="skills" className={styles.skills}>
-              <h1>Web Technologies & Soft skills</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea explicabo quas dignissimos? Exercitationem quis itaque aspernatur reprehenderit vitae doloribus ut distinctio sunt, eveniet, pariatur numquam harum laboriosam! Nobis, facilis expedita?Lorem ipsum dolor sit amet consectetur</p>
-
-              <section>
-                <ul ref={line1}>
-                  <li>
-                    <img src="/images/react.svg" alt="" />
-                    React JS
-                  </li>
-                  <li>
-                    <img src="/images/next.png" alt="" />
-                    Next JS</li>
-                  <li>
-                    <img src="/images/threejs.svg" alt="" />
-                    Three JS</li>
-                  <li>
-                    <img src="/images/sass.svg" alt="" />
-                    Sass
-                  </li>
-                </ul>
-                <ul ref={line2}>
-                  <li>
-                    <img src="/images/strapi.svg" alt="" />
-                    Strapi
-                  </li>
-                  <li>
-                    <img src="/images/firebase.svg" alt="" />
-                    FireBase
-                  </li>
-                  <li>
-                    <img src="/images/web.png" alt="" />
-                    Web APIs
-                  </li>
-                </ul>
-                <ul ref={line3}>
-                  <li>
-                    <img src="/images/github-2.svg" alt="" />
-                    Git & Github
-                  </li>
-                  <li>
-                    <img src="/images/vercel.svg" alt="" />
-                    Vercel
-                  </li>
-                  <li>
-                    <img src="/images/heroku.svg" alt="" />
-                    Heroku
-                  </li>
-                </ul>
+              <div className={styles.presentation__content__text} ref={presentationText}>
+                  I am a 21 years old <strong>computer science student</strong> based in <strong>Lyon</strong>. I started learning programmig on my own in <strong>2020</strong> , started with Python then C++ then i learned Linux and basic web architecture ,and finally got into web programming , i started with HTML , CSS javascript and did some PHP , after that i chose to master <strong>Javascript</strong> so i passed the JavaScript Algorithms and Data Structures <strong>certification</strong> on freecodecamp.org that you can find <a href={'https://www.freecodecamp.org/certification/fcc58c90e68-b03b-4494-8ab1-13af0fb0cfaf/javascript-algorithms-and-data-structures'} target='_blank'>here</a>. I built some <a href="#projects">projects</a> with Vanilla Javascript and then as my projects became more complex i switched to <strong>React</strong> and fell in love with it 😍.
+              </div>
+            </div>
               </section>
+              <section className={styles.skills}>
+                <div className={styles.skills__content_container} id="skills">
+                  <div className={styles.skills__content}>
+                  <h1>Web Technologies & Soft skills</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea explicabo quas dignissimos? Exercitationem quis itaque aspernatur reprehenderit vitae doloribus ut distinctio sunt, eveniet, pariatur numquam harum laboriosam! Nobis, facilis expedita?Lorem ipsum dolor sit amet consectetur</p>
 
-          </section>
+                  <section>
+                  <ul ref={line1}>
+                    <li>
+                      <img src="/images/react.svg" alt="" />
+                      React JS
+                    </li>
+                    <li>
+                      <img src="/images/next.png" alt="" />
+                      Next JS</li>
+                    <li>
+                      <img src="/images/threejs.svg" alt="" />
+                      Three JS</li>
+                    <li>
+                      <img src="/images/sass.svg" alt="" />
+                      Sass
+                    </li>
+                  </ul>
+                  <ul ref={line2}>
+                    <li>
+                      <img src="/images/strapi.svg" alt="" />
+                      Strapi
+                    </li>
+                    <li>
+                      <img src="/images/firebase.svg" alt="" />
+                      FireBase
+                    </li>
+                    <li>
+                      <img src="/images/web.png" alt="" />
+                      Web APIs
+                    </li>
+                  </ul>
+                  <ul ref={line3}>
+                    <li>
+                      <img src="/images/github-2.svg" alt="" />
+                      Git & Github
+                    </li>
+                    <li>
+                      <img src="/images/vercel.svg" alt="" />
+                      Vercel
+                    </li>
+                    <li>
+                      <img src="/images/heroku.svg" alt="" />
+                      Heroku
+                    </li>
+                  </ul>
+                  </section>
+                  </div>
+                </div>
 
-          <Projects/>
-        </section>  
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,96L60,106.7C120,117,240,139,360,133.3C480,128,600,96,720,85.3C840,75,960,85,1080,112C1200,139,1320,181,1380,202.7L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+              </section>
+              <Projects/>
+          </section>  
       </main>
     </>
   )
