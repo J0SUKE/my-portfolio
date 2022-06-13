@@ -37,11 +37,11 @@ export default function Projects() {
                             <h3>#REACT.JS #REACT.ROUTER</h3>
                             <p>A fully client side E-commerce website interface, using React JS and React Router for the client Side rendering , it fetches data from a custon API.</p>
                             <div className={styles.links}>
-                                <a href="https://boutique-huawei-react.vercel.app/" target="_blank">
+                                <a href="https://boutique-huawei-react.vercel.app/" target="_blank" rel="noreferrer">
                                     <p>SEE LIVE</p>
                                     <img src="/images/arrow-up-right.svg" alt="" />
                                 </a>
-                                <a href="https://github.com/J0SUKE/boutique-huawei-react"  target="_blank">
+                                <a href="https://github.com/J0SUKE/boutique-huawei-react"  target="_blank" rel="noreferrer">
                                     <p>GITHUB</p>
                                     <img src="/images/arrow-up-right.svg" alt="" />
                                 </a>
@@ -52,11 +52,11 @@ export default function Projects() {
                             <h3>#JAVASCRIPT</h3>
                             <p>A crypto-currencies App that fetches a third party API to get and show data about a given crypto , built with vanilla Javascript</p>
                             <div className={styles.links}>
-                                <a href="https://github.com/J0SUKE/Proton-crypto-app" target="_blank">
+                                <a href="https://github.com/J0SUKE/Proton-crypto-app" target="_blank" rel="noreferrer">
                                     <p>SEE LIVE</p>
                                     <img src="/images/arrow-up-right.svg" alt="" />
                                 </a>
-                                <a href="https://j0suke.github.io/Proton-crypto-app/" target="_blank">
+                                <a href="https://j0suke.github.io/Proton-crypto-app/" target="_blank" rel="noreferrer">
                                     <p>GITHUB</p>
                                     <img src="/images/arrow-up-right.svg" alt="" />
                                 </a>
@@ -67,11 +67,11 @@ export default function Projects() {
                             <h3>#REACT.JS #NEXT.JS #STRAPI</h3>
                             <p>A Blog app with Next Js for the server side rendering (static rendering) and Strapi for the content management</p>
                             <div className={styles.links}>
-                                <a href="https://le-blog-de-jean-k6ou8skf5-jean2701.vercel.app/" target="_blank">
+                                <a href="https://le-blog-de-jean-k6ou8skf5-jean2701.vercel.app/" target="_blank" rel="noreferrer">
                                     <p>SEE LIVE</p>
                                     <img src="/images/arrow-up-right.svg" alt="" />
                                 </a>
-                                <a href="https://github.com/J0SUKE/blog-next-strapi" target="_blank">
+                                <a href="https://github.com/J0SUKE/blog-next-strapi" target="_blank" rel="noreferrer">
                                     <p>GITHUB</p>
                                     <img src="/images/arrow-up-right.svg" alt="" />
                                 </a>
@@ -83,11 +83,11 @@ export default function Projects() {
                             <h3>#JAVASCRIPT #THREE JS</h3>
                             <p>A simple product page using Three js for the 3d model</p>
                             <div className={styles.links}>
-                                <a href="https://hifoam.vercel.app/" target="_blank">
+                                <a href="https://hifoam.vercel.app/" target="_blank" rel="noreferrer">
                                     <p>SEE LIVE</p>
                                     <img src="/images/arrow-up-right.svg" alt="" />
                                 </a>
-                                <a href="https://github.com/J0SUKE/shoes-store" target="_blank">
+                                <a href="https://github.com/J0SUKE/shoes-store" target="_blank" rel="noreferrer">
                                     <p>GITHUB</p>
                                     <img src="/images/arrow-up-right.svg" alt="" />
                                 </a>
