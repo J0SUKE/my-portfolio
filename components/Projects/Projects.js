@@ -12,7 +12,6 @@ export default function Projects() {
 
     function goNext() {
         if (currentSlide==max.current-1) return;
-
         setCurrentSlide(currentSlide=>currentSlide+1);
     }
 
@@ -111,18 +110,16 @@ export default function Projects() {
                     <div className={styles.images_caroussel}>
                         <ul ref={imagesSlider}>
                             <li>
-                                <img src="/images/huawei2.png" alt="" />
                                 <img src="/images/huawei1.png" alt="" />
                             </li>
                             <li>
                                 <img src="/images/proton1.png" alt="" />
-                                <img src="/images/proton2.png" alt="" />
                             </li>
                             <li>
 
                             </li>
                             <li>
-                                <img src="/images/hifoam1.jpg" alt="" style={{top:10+'%',height:80+'%',width:'auto'}}/>
+                                <img src="/images/hifoam1.jpg" alt=""/>
                             </li>
                         </ul>
                     </div>

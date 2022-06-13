@@ -4,16 +4,32 @@ import Canvas from '../Canvas/Canvas';
 import { useEffect,useRef } from 'react';
 import Link from 'next/link';
 import Projects from '../Projects/Projects';
+import { throttle } from 'lodash';
 
 export default function Home() {
     
   const [line1,line2,line3] = useObserveSkills(styles.active);
+  const presentation = useRef();
+  
   const presentationText = useRef();
   const presentationImg = useRef();
   const content = useRef();
+  const upBtn = useRef();
 
   useEffect(()=>{
-    
+
+
+    window.addEventListener("scroll",throttle(()=>{
+      const {scrollTop,clientHeight} = document.documentElement;
+      if (scrollTop>=clientHeight) 
+      {
+        upBtn.current.classList.add(styles.active);   
+      }
+      else{
+        upBtn.current.classList.remove(styles.active);   
+      }
+    },300))
+
     let observer = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if (entry.isIntersecting) {
@@ -32,11 +48,13 @@ export default function Home() {
 
   },[])
 
+
   return (
     <>
       <Header/>
       <main className={styles.main}>
-        <section className={styles.hero}>
+
+        <section className={styles.hero} id="home">
               <div className={styles.contact_links}>
                   <ul>
                     <li>
@@ -81,7 +99,16 @@ export default function Home() {
               </a>
         </section>      
           <section className={styles.content} ref={content}>
-              <section id="about" className={styles.presentation}>
+              <a href="#home">
+                <button className={styles.goUp} ref={upBtn}>
+                  <p>Go Up</p>
+                  <div className={styles.arrow}>
+                    <span></span>
+                  </div>
+                </button>
+              </a>
+              
+              <section id="about" className={styles.presentation} ref={presentation}>
             <h1>About</h1>
             <div className={styles.presentation__content}>
               <div className={styles.presentation__content__img} ref={presentationImg}>
