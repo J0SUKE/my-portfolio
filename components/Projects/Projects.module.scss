@@ -29,6 +29,7 @@
 .caroussel_container
 {
     display: flex;
+    max-width: 1200px;
     max-width: 100%;
     justify-content: space-between;
     @media screen and(max-width:950px) {

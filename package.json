@@ -20,7 +20,8 @@
     "sass": "^1.52.2",
     "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^8.2.2",
-    "three": "^0.141.0"
+    "three": "^0.141.0",
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "eslint": "8.17.0",
