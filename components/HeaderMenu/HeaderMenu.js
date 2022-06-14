@@ -1,6 +1,7 @@
 import React,{useContext} from "react";
 import { HeaderContext } from "../Layout/Layout";
 import styles from './HeaderMenu.module.scss';
+import Image from "next/image";
 
 export default function HeaderMenu() {
     const {menu,menuActive,setMenuActive} = useContext(HeaderContext);
@@ -36,13 +37,16 @@ export default function HeaderMenu() {
                 </ul>  
             </div>
             <div className={styles.header_menu__right_img}>
-                <img src="/images/final2.png" alt=""/>
+                <Image
+                    src={'/images/final2.png'}
+                    layout='fill'
+                />
             </div>
             <div className={styles.header_menu__left}>
   
             </div>
             <div className={styles.header_menu__bottom_img}>
-                <img src="/images/menuBottom.jpg" alt=""/>
+                <img src="/images/menuBottom.jpg" alt="" />
             </div>
         </menu>
     )
