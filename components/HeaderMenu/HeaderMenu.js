@@ -36,7 +36,7 @@ export default function HeaderMenu() {
                 </ul>  
             </div>
             <div className={styles.header_menu__right_img}>
-                <img src="/images/menuLeft.jpg" alt=""/>
+                <img src="/images/final2.png" alt=""/>
             </div>
             <div className={styles.header_menu__left}>
   

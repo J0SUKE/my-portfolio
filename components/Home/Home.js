@@ -85,7 +85,7 @@ export default function Home() {
               <div className={styles.Short_presentation}>
                 <h1>React developer and Web Integrator</h1>
                 <p>Hi There 🖐! I&apos;m Jean, <strong>self taught</strong> front-end developer who is very enthusiastic about the latest web technologies 💻</p>
-                <p>I am passionate about <strong>modern design</strong>🎨 and <strong>clean Code</strong> ,threfore my objective is to provide the best <strong>User Experience</strong> 🚀!</p>
+                <p>I am passionate about <strong>modern design</strong>🎨 and <strong>clean Code</strong> ,therefore my objective is to provide the best <strong>User Experience</strong> 🚀!</p>
               </div>
               <Canvas/>
               <div className={styles.shortLinks}>
@@ -112,10 +112,10 @@ export default function Home() {
             <h1>About</h1>
             <div className={styles.presentation__content}>
               <div className={styles.presentation__content__img} ref={presentationImg}>
-                  <img src="/images/presentation.jpg" alt="" />
+                  <img src="/images/presentation.png" alt="" />
               </div>
               <div className={styles.presentation__content__text} ref={presentationText}>
-                  I am a 21 years old <strong>freelance web developer</strong> based in <strong>Lyon</strong>. I started learning programmig on my own in <strong>2020</strong> , started with Python then C++ then i learned Linux and basic web architecture ,and finally got into web programming , i started with HTML , CSS javascript and did some PHP , after that i chose to master <strong>Javascript</strong> so i passed the JavaScript Algorithms and Data Structures <strong>certification</strong> on freecodecamp.org that you can find <a href={'https://www.freecodecamp.org/certification/fcc58c90e68-b03b-4494-8ab1-13af0fb0cfaf/javascript-algorithms-and-data-structures'} target='_blank' rel="noreferrer">here</a>. I built some <a href="#projects">projects</a> with Vanilla Javascript and then as my projects became more complex i switched to <strong>React</strong> and fell in love with it 😍.
+                  I am a 21 years old <strong>freelance web developer</strong> based in <strong>Lyon</strong>. I started learning programming on my own in <strong>2020</strong>, started with Python then C++ then I learned Linux and basic web architecture ,and finally got into web programming, I started with HTML , CSS, Javascript and did some PHP , after that I chose to master <strong>Javascript</strong> so I passed the JavaScript Algorithms and Data Structures <strong>certification</strong> on freecodecamp.org that you can find <a href={'https://www.freecodecamp.org/certification/fcc58c90e68-b03b-4494-8ab1-13af0fb0cfaf/javascript-algorithms-and-data-structures'} target='_blank' rel="noreferrer">here</a>. I built some <a href="#projects">projects</a> with Vanilla Javascript and then as my projects became more complex I switched to <strong>React</strong> and fell in love with it 😍.
               </div>
             </div>
               </section>
@@ -123,8 +123,8 @@ export default function Home() {
                 <div className={styles.skills__content_container} id="skills">
                   <div className={styles.skills__content}>
                   <h1 ref={skillsTitls}>Web Technologies & Soft skills</h1>
-                  <p ref={p1}>As someone who loves discovering new technologies , I am not afraid of learning new tools on the go as i think it is very important to use the right tool for the right task .I am also a fast learner so i can adapt to any stack without any language or framework bareer.</p>
-                  <p ref={p2}>Here are some tech-tools and libraries i am good at </p>
+                  <p ref={p1}>As someone who loves discovering new technologies, I am not afraid of learning new tools on the go as I think it is very important to use the right tool for the right task. I am also a fast learner, so I can adapt to any stack without any language or framework barriers.</p>
+                  <p ref={p2}>Here are some tech-tools and libraries I am good at</p>
 
                   <section>
                   <ul ref={line1}>
