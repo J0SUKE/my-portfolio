@@ -322,6 +322,7 @@ export default function Canvas() {
 
     function handleScroll() {
         const {scrollTop,clientHeight} = document.documentElement;   
+        if (scrollTop>clientHeight) return;
 
         let ratio = scrollTop/clientHeight;
         if (animating) {

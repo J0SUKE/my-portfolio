@@ -116,6 +116,7 @@ $menu-right:rgb(234, 234, 234);
             li{
                 overflow: hidden;
                 display: inline-block;
+                margin: .5rem 0;
             }
             li a
             {
@@ -137,60 +138,6 @@ $menu-right:rgb(234, 234, 234);
             li:nth-of-type(5){a{animation: animateBottomImg .4s 1s forwards;}}
         }
 
-        .small_links
-        {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            grid-template-rows: repeat(2,1fr);
-            grid-row-gap: .6rem;
-            padding: 3rem 0 0 15% ;
-            font-size: 1.4rem;
-
-            li{
-                overflow: hidden;
-            }
-
-            li a{
-                display: inline-block;
-                padding-bottom: .2rem;
-                font-weight: 300;
-                transform:translateY(100%);
-                span{
-                    color: $menu-left;
-                    margin-left: .5rem;
-                }
-                position: relative;
-                cursor: pointer;
-                &::before
-                {
-                    content: "";
-                    position: absolute;
-                    height: 1px;
-                    background: black;
-                    bottom: 0px;
-                    width: 100%;
-                    left: 0;
-                    transition: transform .3s;
-                    transform: scaleX(0);
-                    transform-origin: right;
-                }   
-
-                &:hover
-                {
-                    &::before
-                    {
-                        transform-origin: left;
-                        transform: scaleX(1);
-                    }
-                    
-                }
-            }
-
-            li:nth-of-type(1){a{animation: animateBottomImg .4s 1.2s forwards;}}
-            li:nth-of-type(2){a{animation: animateBottomImg .4s 1.2s forwards;}}
-            li:nth-of-type(3){a{animation: animateBottomImg .4s 1.4s forwards;}}
-            li:nth-of-type(4){a{animation: animateBottomImg .4s 1.4s forwards;}}
-        }
 
     }
 
@@ -311,7 +258,7 @@ $menu-right:rgb(234, 234, 234);
         .header_menu__right
         {
             width: 100%;
-            .big_links,.small_links
+            .big_links
             {
                 padding: 2rem 0;
             }

@@ -79,15 +79,15 @@ export default function Projects() {
                         </li>
                         <p></p>
                         <li>
-                            <h1>HIFOAM SHOES-STORE</h1>
-                            <h3>#JAVASCRIPT #THREE JS</h3>
-                            <p>A simple product page using Three js for the 3d model</p>
+                            <h1>GIPHY LANDING PAGE</h1>
+                            <h3>#JAVASCRIPT #SASS</h3>
+                            <p>A modern and elegant landing page with vanilla Javascript and Sass , it is a reproduction of the giphy website</p>
                             <div className={styles.links}>
-                                <a href="https://hifoam.vercel.app/" target="_blank" rel="noreferrer">
+                                <a href="https://j0suke.github.io/GIPHY-site-vitrine/" target="_blank" rel="noreferrer">
                                     <p>SEE LIVE</p>
                                     <img src="/images/arrow-up-right.svg" alt="" />
                                 </a>
-                                <a href="https://github.com/J0SUKE/shoes-store" target="_blank" rel="noreferrer">
+                                <a href="https://github.com/J0SUKE/GIPHY-site-vitrine" target="_blank" rel="noreferrer">
                                     <p>GITHUB</p>
                                     <img src="/images/arrow-up-right.svg" alt="" />
                                 </a>
@@ -110,16 +110,16 @@ export default function Projects() {
                     <div className={styles.images_caroussel}>
                         <ul ref={imagesSlider}>
                             <li>
-                                <img src="/images/huawei1.png" alt="" />
+                                <img src="/images/huawei.png" alt="" />
                             </li>
                             <li>
-                                <img src="/images/proton1.png" alt="" />
+                                <img src="/images/proton.png" alt="" />
                             </li>
                             <li>
 
                             </li>
                             <li>
-                                <img src="/images/hifoam1.jpg" alt=""/>
+                                <img src="/images/giphy.png" alt=""/>
                             </li>
                         </ul>
                     </div>

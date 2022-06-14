@@ -28,20 +28,12 @@ export default function HeaderMenu() {
             <div className={styles.header_menu__right}>
                 
                 <ul className={styles.big_links}>
-                    <li><a href="#">Présentation</a></li>
-                    <li><a href="#">Projets</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Informations</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-  
-                <ul className={styles.small_links}>
-                    <li><a href="#">React<span>(4)</span></a></li>
-                    <li><a href="#">Javascript<span>(6)</span></a></li>
-                    <li><a href="#">NEXT JS <span>(2)</span></a></li>
-                    <li><a href="#">Strapi<span>(4)</span></a></li>
-                </ul>
-  
+                    <li><a onClick={closeMenu} href="#home">Home</a></li>
+                    <li><a onClick={closeMenu} href="#about">About</a></li>
+                    <li><a onClick={closeMenu} href="#skills">Skills</a></li>
+                    <li><a onClick={closeMenu} href="#projects">Projects</a></li>
+                    <li><a onClick={closeMenu} href="#contact">Contact</a></li>
+                </ul>  
             </div>
             <div className={styles.header_menu__right_img}>
                 <img src="/images/menuLeft.jpg" alt=""/>

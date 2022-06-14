@@ -390,8 +390,6 @@ $menu-left:#E62B33;
     outline: none;
     background: transparent;
     top: 50vh;
-    left:100vw;
-
     z-index: 3;
     color: white;
     mix-blend-mode:difference;
@@ -457,6 +455,10 @@ $menu-left:#E62B33;
     }
 }
 
+.goUp
+{
+    left:100vw;
+}
 
 
 .contact
@@ -493,7 +495,13 @@ $menu-left:#E62B33;
 
             p{
                 margin: 3rem 0;
-                font-size: 1.4rem;
+                font-size: 1.1rem;
+                line-height: 1.8rem;
+                color: rgb(66, 66, 66);
+                a{
+                    font-weight: 600;
+                    color: black;
+                }
             }
 
             ul{

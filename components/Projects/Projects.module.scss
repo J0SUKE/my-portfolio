@@ -1,3 +1,5 @@
+$menu-left:#E62B33;
+
 .projects
 {
 
@@ -100,7 +102,7 @@
                 }
                 p{
                     font-weight: 500;
-                    color: black;
+                    color: $menu-left;
                     font-size: 1.4rem;
                 }
                 &:last-of-type
@@ -115,7 +117,7 @@
                     content: "";
                     height: 2px;
                     width: 100%;
-                    background: black;
+                    background: $menu-left;
                     bottom: 12px;
                     transform: scaleX(0%);
                     transition: transform .3s;
