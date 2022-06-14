@@ -16,8 +16,8 @@ export default function Canvas() {
     const scene = new THREE.Scene();
 
     let sizes = {
-        width:canvasContainer.current.getBoundingClientRect().width,
-        height:canvasContainer.current.getBoundingClientRect().height
+        width:window.innerWidth,
+        height:window.innerHeight
     }
 
     const{width,height} = sizes;

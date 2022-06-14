@@ -42,7 +42,6 @@ export default function Header() {
         
         
         window.addEventListener("scroll",throttle(()=>{headerScroll()}),500);
-        //window.addEventListener("resize",throttle(()=>{handleResize()}),500);
     },[])
 
     return (

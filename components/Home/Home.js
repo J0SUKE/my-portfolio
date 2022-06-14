@@ -8,7 +8,7 @@ import { throttle } from 'lodash';
 
 export default function Home() {
     
-  const [line1,line2,line3] = useObserveSkills(styles.active);
+  const [line1,line2,line3,skillsTitls,p1,p2] = useObserveSkills(styles.active);
   const presentation = useRef();
   
   const presentationText = useRef();
@@ -122,8 +122,9 @@ export default function Home() {
               <section className={styles.skills}>
                 <div className={styles.skills__content_container} id="skills">
                   <div className={styles.skills__content}>
-                  <h1>Web Technologies & Soft skills</h1>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea explicabo quas dignissimos? Exercitationem quis itaque aspernatur reprehenderit vitae doloribus ut distinctio sunt, eveniet, pariatur numquam harum laboriosam! Nobis, facilis expedita?Lorem ipsum dolor sit amet consectetur</p>
+                  <h1 ref={skillsTitls}>Web Technologies & Soft skills</h1>
+                  <p ref={p1}>As someone who loves discovering new technologies , I am not afraid of learning new tools on the go ,i think it is very important to use the right tool for the right task .I am also a fast learner so i can adapt to any stack without any language or framework bareer.</p>
+                  <p ref={p2}>Here are some tech-tools and libraries i am good at </p>
 
                   <section>
                   <ul ref={line1}>
@@ -178,6 +179,9 @@ export default function Home() {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fillOpacity="1" d="M0,96L60,106.7C120,117,240,139,360,133.3C480,128,600,96,720,85.3C840,75,960,85,1080,112C1200,139,1320,181,1380,202.7L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
               </section>
               <Projects/>
+              <div className={styles.contact}>
+                <h1>Contact me</h1>
+              </div>
           </section>  
       </main>
     </>
@@ -190,8 +194,12 @@ function useObserveSkills(activeClass) {
   const line1 = useRef();
   const line2 = useRef();
   const line3 = useRef();
+  const skillsTitls = useRef();
+  const p1 = useRef();
+  const p2 = useRef();
 
-  const entries = [line1,line2,line3];
+
+  const entries = [line1,line2,line3,skillsTitls,p1,p2];
 
   useEffect(()=>{
       let observer = new IntersectionObserver((entries)=>{
@@ -202,7 +210,7 @@ function useObserveSkills(activeClass) {
         });  
           
       },{
-        threshold:0.5
+        threshold:0.8
       })
 
       if (line1 && line2 && line3) {
@@ -213,8 +221,8 @@ function useObserveSkills(activeClass) {
       
       
       
-  },[line1,line2,line3])
+  },[line1,line2,line3,skillsTitls,p1,p2])
 
 
-  return [line1,line2,line3];
+  return [line1,line2,line3,skillsTitls,p1,p2];
 }

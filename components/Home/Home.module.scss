@@ -3,7 +3,6 @@ $menu-left:#E62B33;
 
 .main
 {
-    position: absolute;     
     z-index: 0;
     transform: translateY(100vh);
     background: white;
@@ -18,8 +17,6 @@ $menu-left:#E62B33;
     }
     
     animation: animateMain 2s forwards cubic-bezier( 0.76, 0.03, 0.14, 1.01 );
-
-    position: relative;
 
     &::-webkit-scrollbar
     {
@@ -68,26 +65,26 @@ $menu-left:#E62B33;
     width: 40%;
     min-width: 350px;
     h1{
-        transform: translateY(100%);
+        transform: translateY(50%);
         opacity: 0;
-        animation: animateP .7s 1s forwards;
+        animation: animateP .7s 1s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
         text-decoration: underline;
         font-size: clamp(1.2rem,3vw,1.5rem);
     }
     P{
         line-height: 1.3rem;
         margin: 1rem 0;
-        transform: translateY(100%);
+        transform: translateY(50%);
         opacity: 0;
         color: rgb(70, 70, 70);
         font-size: clamp(.9rem,2vw,1rem);
         &:first-of-type
         {
-            animation: animateP .7s 1.2s forwards;
+            animation: animateP .7s 1.2s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
         }
         &:nth-of-type(2)
         {
-            animation: animateP .7s 1.4s forwards;
+            animation: animateP .7s 1.4s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
         }
     }
 
@@ -98,7 +95,7 @@ $menu-left:#E62B33;
 
     @keyframes animateP {
         from{
-            transform: translateY(100%);
+            transform: translateY(50%);
             opacity: 0;
         }to{
             transform: translateY(0%);
@@ -211,7 +208,7 @@ $menu-left:#E62B33;
     min-height: 100vh;
     margin: auto;
     padding-top: 5vh;
-    scroll-snap-align: center;
+
     h1{
         text-align: center;
         font-size: 2rem;
@@ -319,12 +316,28 @@ $menu-left:#E62B33;
         margin: 3rem auto;
         align-self: flex-start;
         justify-self: center;
+        opacity: 0;
+        transform: translateY(50%);
+        &.active
+        {
+            animation: animateUl 1s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
+        }
     }
 
     p{
         width: 80%;
         font-size: 1.1rem;
         line-height: 2rem;
+        opacity: 0;
+        transform: translateY(50%);
+        &.active
+        {
+            animation: animateUl 1s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
+        }
+    }
+    p:nth-of-type(2)
+    {
+        margin-top: 2rem;
     }
 
     section{
@@ -339,16 +352,7 @@ $menu-left:#E62B33;
         flex-wrap: wrap;
         &.active
         {
-            animation: animateUl .4s forwards;
-            @keyframes animateUl {
-                from{
-                    opacity: 0;
-                    transform: translateY(50%);
-                }to{
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
+            animation: animateUl 1s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
         }
         li{
             font-size: 1.2rem;
@@ -365,6 +369,16 @@ $menu-left:#E62B33;
                 width: auto;
                 margin: 0 .5rem 0 0;
             }
+        }
+    }
+
+    @keyframes animateUl {
+        from{
+            opacity: 0;
+            transform: translateY(50%);
+        }to{
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 }
@@ -442,4 +456,17 @@ $menu-left:#E62B33;
     @media screen and(max-width:800px) {
         display: none;
     }
+}
+
+
+
+.contact
+{
+    height: 100vh;
+    width: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
