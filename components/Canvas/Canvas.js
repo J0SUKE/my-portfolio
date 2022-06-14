@@ -11,13 +11,14 @@ export default function Canvas() {
   
   const canvas = useRef();
   const canvasContainer = useRef();
+  const mobileLayer = useRef();
 
   useEffect(()=>{
     const scene = new THREE.Scene();
 
     let sizes = {
         width:window.innerWidth,
-        height:window.innerHeight
+        height:Math.max(500,window.innerHeight)
     }
 
     const{width,height} = sizes;
@@ -345,7 +346,6 @@ export default function Canvas() {
 
     renderer.render( scene, camera );
 
-
     function animate() {
         requestAnimationFrame( animate );
         controls.update();
@@ -359,8 +359,23 @@ export default function Canvas() {
   
 return (
     <div className={styles.sceneContainer} ref={canvasContainer}>
+        {
+            isMobile() ? <div className={styles.mobileLayer} ref={mobileLayer}></div> : null
+        }
         <canvas className={styles.webGL} ref={canvas}></canvas>
     </div>
     
   )
 }
+
+
+const isMobile = () => {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+        return true;    
+    }
+    else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+        return true;
+    }
+    return false;
+};

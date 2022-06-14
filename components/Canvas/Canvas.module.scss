@@ -3,8 +3,17 @@
     max-width: 100%;
     width: 100%;
     overflow: hidden;
-    height: 100vh;
+    height: 100%;
+    min-height: 500px;
     position: absolute;
     inset: 0;
     z-index: 0;
+}
+
+.mobileLayer
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
 }

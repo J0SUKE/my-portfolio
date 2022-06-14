@@ -28,14 +28,14 @@ $menu-left:#E62B33;
 {
     width: 100%;
     height: 100vh;
+    min-height: 500px;
 }
 
 
 .contact_links
 {
     position: absolute;
-    top: 15vh;
-    height: 50vh;
+    top: 120px;
     width: 30px;
     left: 2rem;
     z-index: 1;
@@ -59,7 +59,7 @@ $menu-left:#E62B33;
 {
     position: absolute;
     z-index: 1;
-    top: 15vh;
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
     width: 40%;
@@ -152,7 +152,7 @@ $menu-left:#E62B33;
 {
     position: absolute;
     left: 2rem;
-    bottom: 2vh;
+    bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -577,7 +577,7 @@ $menu-left:#E62B33;
 
     .copyright
     {
-        margin: 1rem 0;
+        padding: 3rem 0 1rem 0;
         color: rgb(66, 66, 66);
     }
 }

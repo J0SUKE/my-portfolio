@@ -5,7 +5,6 @@ import { useEffect,useRef } from 'react';
 import Link from 'next/link';
 import Projects from '../Projects/Projects';
 import { throttle } from 'lodash';
-import Typewriter from 'typewriter-effect';
 
 export default function Home() {
     
@@ -31,6 +30,9 @@ export default function Home() {
       }
     },300))
 
+
+    let trsh = (window.innerWidth>=800 ? 0.4 : 0.1);
+
     let observer = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if (entry.isIntersecting) {
@@ -39,7 +41,7 @@ export default function Home() {
         }
       })
     },{
-      threshold:0.7
+      threshold:trsh
     })
 
     
