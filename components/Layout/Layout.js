@@ -1,8 +1,7 @@
 import Introduction from "../Introduction/Introduction"
 import Home from "../Home/Home"
-import React,{ useEffect,useRef,useState ,useContext} from 'react';
+import React,{ useRef,useState } from 'react';
 import HeaderMenu from "../HeaderMenu/HeaderMenu";
-import Cursor from "../Cursor/Cursor";
 
 export const HeaderContext = React.createContext();
 
@@ -22,29 +21,19 @@ export default function Layout() {
       menu
   }
 
-  useEffect(()=>{
-    let timer = setTimeout(() => {
-        setHome(true);
-    }, 5000);
-
-    return ()=>clearTimeout(timer);
-  },[]);
-
   return (
     <>
+        <noscript>This site needs javasctipt</noscript>
         <Introduction/>
         {
-          home && 
-          (
-            <>
-              <HeaderContext.Provider value={HeaderContextValue}>
-                <Home></Home>
-                {
-                  menuActive && <HeaderMenu/>
-                }
-              </HeaderContext.Provider>
-            </>
-          ) 
+          <>
+            <HeaderContext.Provider value={HeaderContextValue}>
+              <Home></Home>
+              {
+                menuActive && <HeaderMenu/>
+              }
+            </HeaderContext.Provider>
+          </>
         }                
     </>
   )

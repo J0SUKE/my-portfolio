@@ -8,7 +8,7 @@ export default function Header() {
     
     const headerRef = useRef();
     const [headerClass,setHeaderClass] = useState("");
-    let lastScroll = useRef(document.documentElement.scrollTop);
+    let lastScroll = useRef(0);
     
     useEffect(()=>{
         
@@ -41,8 +41,16 @@ export default function Header() {
         }
         
         
-        window.addEventListener("scroll",throttle(()=>{headerScroll()}),500);
+        window.addEventListener("scroll",throttle(()=>{headerScroll()}),1000);
     },[])
+
+    useEffect(()=>{
+        let timer = setTimeout(() => {
+            headerRef.current.style.display = 'unset';
+        }, 5000);
+    
+        return ()=>clearTimeout(timer);
+      },[]);
 
     return (
         <header className={`${styles.headerContainer} ${headerClass}`} ref={headerRef}>
@@ -56,7 +64,7 @@ export default function Header() {
 
 function MenuButton() {
     
-    const {menuActive,setMenuActive,menuBtn,menu} = useContext(HeaderContext);
+    const {menuActive,setMenuActive,menuBtn} = useContext(HeaderContext);
 
     
     return(

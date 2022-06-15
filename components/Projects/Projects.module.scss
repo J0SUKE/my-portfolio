@@ -15,7 +15,7 @@ $menu-left:#E62B33;
         {
             font-size: 2rem;
             text-align: center; 
-            margin-bottom: 6rem;
+            margin: 4rem 0 6rem 0;
         }
         margin: auto;
         width: 80%;
@@ -31,8 +31,8 @@ $menu-left:#E62B33;
 .caroussel_container
 {
     display: flex;
-    max-width: 1200px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1300px;
     justify-content: space-between;
     @media screen and(max-width:950px) {
         flex-direction: column;
@@ -97,6 +97,7 @@ $menu-left:#E62B33;
             margin: 2rem 0;
             a{
                 display: flex;
+                user-select: none;
                 img{
                     width: 30px;
                 }

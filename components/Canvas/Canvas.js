@@ -2,7 +2,7 @@ import styles from './Canvas.module.scss';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
-import { useRef,useEffect } from 'react';
+import { useRef,useEffect, useState } from 'react';
 import { Mesh } from 'three';
 import gsap from 'gsap'
 import { throttle } from 'lodash';
@@ -12,6 +12,7 @@ export default function Canvas() {
   const canvas = useRef();
   const canvasContainer = useRef();
   const mobileLayer = useRef();
+  const [deviceType,setDeviceType] = useState(false);
 
   useEffect(()=>{
     const scene = new THREE.Scene();
@@ -336,7 +337,7 @@ export default function Canvas() {
 
     canvas.current.addEventListener("mouseup",throttle(()=>{resetCameraPosition()}))
     canvas.current.addEventListener("touchend",throttle(()=>{resetCameraPosition()}));
-    window.addEventListener("scroll",throttle(()=>{handleScroll()}))
+    window.addEventListener("scroll",throttle(()=>{handleScroll()},10))
 
     const controls = new OrbitControls( camera, canvas.current );
     controls.enableZoom =false;
@@ -356,11 +357,15 @@ export default function Canvas() {
     
   },[])
   
+
+  useEffect(()=>{
+    setDeviceType(isMobile());
+  },[])
   
 return (
     <div className={styles.sceneContainer} ref={canvasContainer}>
         {
-            isMobile() ? <div className={styles.mobileLayer} ref={mobileLayer}></div> : null
+            deviceType && <div className={styles.mobileLayer} ref={mobileLayer}></div>
         }
         <canvas className={styles.webGL} ref={canvas}></canvas>
     </div>
