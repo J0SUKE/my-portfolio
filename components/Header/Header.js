@@ -12,8 +12,6 @@ export default function Header() {
     
     useEffect(()=>{
         
-
-
         function headerScroll() {
             
             const {scrollTop} = document.documentElement;   
@@ -36,14 +34,13 @@ export default function Header() {
             lastScroll.current = scrollTop;
         }
 
-            
         window.addEventListener("scroll",throttle(()=>{headerScroll()}),1000);
     },[])
 
     useEffect(()=>{
         let timer = setTimeout(() => {
             headerRef.current.style.display = 'unset';
-        }, 5000);
+        }, 4300);
     
         return ()=>clearTimeout(timer);
       },[]);

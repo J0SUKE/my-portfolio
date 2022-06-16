@@ -36,7 +36,7 @@ export default function Home() {
   useEffect(()=>{
     let timer = setTimeout(() => {
       mainRef.current.style.display = 'unset';
-    }, 5000);
+    }, 4300);
 
     return ()=>clearTimeout(timer);
   },[]);
