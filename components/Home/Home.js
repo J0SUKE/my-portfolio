@@ -97,7 +97,9 @@ export default function Home() {
               </div>
               <div className={styles.Short_presentation}>
                 <h1>{intro.attributes.title}</h1>
-                <ReactMarkdown children={intro.attributes.content} skipHtml={false} rehypePlugins={[rehypeRaw]} />
+                <ReactMarkdown skipHtml={false} rehypePlugins={[rehypeRaw]}>
+                  {intro.attributes.content}
+                </ReactMarkdown>
               </div>
               <Canvas/>
               <div className={styles.shortLinks}>
@@ -127,7 +129,9 @@ export default function Home() {
                   <img src={getStrapiMedia(about.attributes.image)} alt="" />
               </div>
               <div className={styles.presentation__content__text} ref={presentationText}>
-                  <ReactMarkdown children={about.attributes.content} skipHtml={false} rehypePlugins={[rehypeRaw]} />
+                  <ReactMarkdown skipHtml={false} rehypePlugins={[rehypeRaw]} >
+                    {about.attributes.content}
+                  </ReactMarkdown>
               </div>
             </div>
               </section>
