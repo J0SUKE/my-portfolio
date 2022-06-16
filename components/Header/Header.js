@@ -36,11 +36,7 @@ export default function Header() {
             lastScroll.current = scrollTop;
         }
 
-        function handleResize() {
-            window.scrollTo(0,0);
-        }
-        
-        
+            
         window.addEventListener("scroll",throttle(()=>{headerScroll()}),1000);
     },[])
 

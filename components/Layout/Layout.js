@@ -21,7 +21,6 @@ export default function Layout() {
 
   return (
     <>
-        <noscript>This site needs javasctipt</noscript>
         <Introduction/>
         {
           <>
