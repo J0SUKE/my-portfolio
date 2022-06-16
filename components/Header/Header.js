@@ -2,6 +2,7 @@ import React,{ useEffect,useRef ,useContext, useState} from 'react';
 import styles from './Header.module.scss';
 import {HeaderContext} from '../Layout/Layout'
 import { throttle } from 'lodash';
+import isMobile from '../../utils/isMobile';
 
 
 export default function Header() {
@@ -12,7 +13,8 @@ export default function Header() {
     
     useEffect(()=>{
         
-        function headerScroll() {
+
+        function headerScrollDesktop() {
             
             const {scrollTop} = document.documentElement;   
             let deltaScroll = scrollTop - lastScroll.current;
@@ -34,7 +36,26 @@ export default function Header() {
             lastScroll.current = scrollTop;
         }
 
-        window.addEventListener("scroll",throttle(()=>{headerScroll()}),1000);
+        function headerScrollMobile() {
+            const {scrollTop} = document.documentElement;   
+            let deltaScroll = scrollTop - lastScroll.current;
+
+            if (scrollTop==0) 
+            {
+                setHeaderClass(styles.static);                
+                return;
+            }
+            else
+            {
+                setHeaderClass(styles.scrollDown);
+            }
+            
+            lastScroll.current = scrollTop;
+        }
+
+        const scrollFunction = (isMobile() ? headerScrollMobile : headerScrollDesktop);
+
+        window.addEventListener("scroll",throttle(()=>{scrollFunction()}),1000);
     },[])
 
     useEffect(()=>{

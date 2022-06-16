@@ -6,6 +6,7 @@ import { useRef,useEffect, useState } from 'react';
 import { Mesh } from 'three';
 import gsap from 'gsap'
 import { throttle } from 'lodash';
+import isMobile from '../../utils/isMobile';
 
 export default function Canvas() {
   
@@ -372,15 +373,3 @@ return (
     
   )
 }
-
-
-const isMobile = () => {
-    const ua = navigator.userAgent;
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-        return true;    
-    }
-    else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-        return true;
-    }
-    return false;
-};
