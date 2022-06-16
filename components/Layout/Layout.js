@@ -8,8 +8,6 @@ export const HeaderContext = React.createContext();
 
 export default function Layout() {
 
-  const [home,setHome] = useState(false);
-
   const [menuActive,setMenuActive] = useState();
   const menuBtn = useRef();
   const menu = useRef();
