@@ -328,15 +328,19 @@ $menu-left:#E62B33;
         line-height: 2rem;
         opacity: 0;
         transform: translateY(50%);
-        &.active
-        {
-            animation: animateUl 1s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
-        }
     }
     p:nth-of-type(2)
     {
         margin-top: 2rem;
     }
+
+    div.active{
+        p
+        {
+            animation: animateUl 1s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
+        }
+    }
+
 
     section{
         width: 80%;
