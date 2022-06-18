@@ -78,5 +78,6 @@ export async function getStaticProps() {
     props: {
       about,skills,projects,intro,socialMedias
     },
+    revalidate: 10,
   }
 }
