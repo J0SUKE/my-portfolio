@@ -19,7 +19,7 @@ export default function Contact() {
         </div>
         <div className={styles.contact__content__right}>
         <h1>Let&apos;s make something great together.</h1>
-        <p>You can contact me via social medias or email me at <a href={`mailto:${socialMedias.email}`} target="__blank" rel="noreferrer">{socialMedias.email}</a></p>
+        <p>You can contact me via social medias or hire me directly on <a href={socialMedias.hire}  target="__blank" rel="noreferrer">malt website</a></p>
         <ul>
             <li>
             <a href={socialMedias.twitter} target="__blank" rel="noreferrer">
