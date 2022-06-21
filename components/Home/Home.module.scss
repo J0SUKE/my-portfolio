@@ -349,13 +349,7 @@ $menu-left:#E62B33;
 
     ul{
         display: flex;
-        opacity: 0;
-        transform: translateY(50%);
         flex-wrap: wrap;
-        &.active
-        {
-            animation: animateUl 1s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
-        }
         li{
             font-size: 1.2rem;
             margin: .5rem 1rem .5rem 0;
@@ -365,11 +359,17 @@ $menu-left:#E62B33;
             background: white;
             color: #4A4A4A;
             box-shadow: 0 0 5px rgba(169, 169, 169, 0.309);
+            opacity: 0;
+            transform: translateY(50%);
             img{
                 display: block;
                 height: 30px;
                 width: auto;
                 margin: 0 .5rem 0 0;
+            }
+            &.active
+            {
+                animation: animateUl 1s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
             }
         }
     }
