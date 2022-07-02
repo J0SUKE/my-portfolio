@@ -47,7 +47,7 @@ export async function getStaticProps() {
 
   const projectsQuery = await fetchAPI('/projects',{
     populate:['image'],
-    sort:['id:asc']
+    sort:['id:desc']
   })
 
   const introQuery = await fetchAPI('/intro');
