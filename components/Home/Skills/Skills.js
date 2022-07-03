@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../Home.module.scss';
+import Image from 'next/image';
 
 import { getStrapiMedia } from '../../../lib/media';
 import { AppContext } from '../../../pages';

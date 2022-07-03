@@ -6,6 +6,7 @@ import { useContext, useEffect, useRef } from 'react';
 
 import rehypeRaw from "rehype-raw";
 import ReactMarkdown from 'react-markdown';
+import Image from 'next/image'
 
 export default function About() {
   
@@ -39,7 +40,13 @@ export default function About() {
         <h1>About</h1>
         <div className={styles.presentation__content}>
             <div className={styles.presentation__content__img} ref={presentationImg}>
-                <img loading="lazy" src={getStrapiMedia(about.attributes.image)} alt="" />
+                <Image
+                    src={getStrapiMedia(about.attributes.image)}
+                    layout='fill'
+                    objectPosition={'center'}
+                    objectFit={'cover'}
+                />
+
             </div>
             <div className={styles.presentation__content__text} ref={presentationText}>
                 <ReactMarkdown skipHtml={false} rehypePlugins={[rehypeRaw]} >

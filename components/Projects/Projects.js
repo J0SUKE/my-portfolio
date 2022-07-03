@@ -2,6 +2,11 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import styles from './Projects.module.scss';
 import { AppContext } from '../../pages';
 import { getStrapiMedia } from '../../lib/media';
+import Image from 'next/image';
+import arrowUpright from '../../public/images/arrow-up-right.svg';
+import arrowleft from '../../public/images/arrow-left.svg';
+import arrowRight from '../../public/images/arrow-right.svg';
+
 
 export default function Projects() {
 
@@ -49,11 +54,17 @@ export default function Projects() {
                                                 <div className={styles.links}>
                                                     <a href={attributes.demo} target="_blank" rel="noreferrer" tabIndex={-1}>
                                                         <p>SEE LIVE</p>
-                                                        <img loading="lazy" src="/images/arrow-up-right.svg" alt="" />
+                                                        <Image
+                                                            src={arrowUpright}
+                                                            width={30}
+                                                        />
                                                     </a>
                                                     <a href={attributes.github}  target="_blank" rel="noreferrer" tabIndex={-1}>
                                                         <p>GITHUB</p>
-                                                        <img loading="lazy" src="/images/arrow-up-right.svg" alt="" />
+                                                        <Image
+                                                            src={arrowUpright}
+                                                            width={30}
+                                                        />
                                                     </a>
                                                 </div>
                                             </li>
@@ -66,13 +77,13 @@ export default function Projects() {
                     <div className={styles.images_container} ref={imagesContainer}>
                         {
                             currentSlide!=0 ? <button className={styles.btnPrev} onClick={goPrev}>
-                                <img loading="lazy" src="/images/arrow-left.svg" alt="" />
+                                <Image src={'/images/arrow-left.svg'} width={40} height={30}/>
                             </button> : null
                         }
 
                         {
                             currentSlide<max.current-1 ? <button className={styles.btnNext} onClick={goNext}>
-                                <img loading="lazy" src="/images/arrow-right.svg" alt="" />
+                                <Image src={'/images/arrow-right.svg'} width={40} height={30}/>
                             </button> : null
                         }
                         <div className={styles.images_caroussel}>
@@ -82,7 +93,12 @@ export default function Projects() {
                                         const {attributes} = item;
                                         return(
                                             <li key={item.id}>
-                                                <img loading="lazy" src={getStrapiMedia(attributes.image)} alt="" />
+                                                <Image
+                                                    src={getStrapiMedia(attributes.image)}
+                                                    layout={'fill'}
+                                                    objectFit={'contain'}
+                                                    objectPosition={'center'}
+                                                />
                                             </li>
                                         )
                                     })

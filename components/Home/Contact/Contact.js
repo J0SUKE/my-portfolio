@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import SVGemail from '../../SVG/SVGemail';
 import SVGtwitter from '../../SVG/SVGtwitter';
 import SVGlinkedin from '../../SVG/SVGlinkedin';
-
+import Image from 'next/image';
 
 export default function Contact() {
     
@@ -15,7 +15,11 @@ export default function Contact() {
     <div className={styles.contact} id="contact">
     <div className={styles.contact__content}>
         <div className={styles.contact__content__left}>
-            <img loading="lazy" src="/images/programming.svg" alt="" />
+            <Image
+                src={"/images/programming.svg"}
+                layout={'fill'}
+                objectFit={'contain'}
+            />
         </div>
         <div className={styles.contact__content__right}>
         <h1>Let&apos;s make something great together.</h1>

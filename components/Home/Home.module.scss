@@ -204,6 +204,7 @@ $menu-left:#E62B33;
 {
 
     width: 80%;
+    max-width: 1100px;
     min-height: 100vh;
     margin: auto;
     padding-top: 5vh;
@@ -223,20 +224,24 @@ $menu-left:#E62B33;
         align-items: center;
 
         &__img{
-            width: 30%;
+            //width: 30%;
+            min-height: 400px;
+            max-height: 400px;
+            min-width: 300px;
+            max-width: 300px;
+            position: relative;
+            border-radius: 1rem;
+            box-shadow: 5px 5px 10px darkgray;
+            transform: translateY(50%);
+            opacity: 0;
             img{
                 width: 100%;
-                transform: translateY(50%);
-                opacity: 0;
                 background:cadetblue;
-                box-shadow: 5px 5px 10px darkgray;
                 border-radius: 1rem;
             }
             &.active
             {
-                img{
-                    animation: appear 1s forwards;
-                }
+                animation: appear 1s forwards;
                 
             }
         }
@@ -361,6 +366,7 @@ $menu-left:#E62B33;
             box-shadow: 0 0 5px rgba(169, 169, 169, 0.309);
             opacity: 0;
             transform: translateY(50%);
+            position: relative;
             img{
                 display: block;
                 height: 30px;
@@ -466,7 +472,7 @@ $menu-left:#E62B33;
 
 .contact
 {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -486,6 +492,8 @@ $menu-left:#E62B33;
         &__left
         {
             width: 40%;
+            min-height: 300px;
+            position: relative;
             img{
                 width: 100%;
             }
@@ -560,6 +568,7 @@ $menu-left:#E62B33;
             &__right
             {
                 margin-top: 3rem;
+                background: black;
                 width: 80%;
                 display: flex;
                 flex-direction: column;
@@ -571,7 +580,7 @@ $menu-left:#E62B33;
             }
             &__left
             {
-                width: 50%;
+                width: 100%;
             }
         }
         @media screen and(max-width:830px)
