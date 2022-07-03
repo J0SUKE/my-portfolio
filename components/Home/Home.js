@@ -20,8 +20,8 @@ export default function Home() {
 
   useEffect(()=>{
 
-    window.addEventListener("scroll",throttle(()=>{
-      const {scrollTop,clientHeight} = document.documentElement;
+    mainRef.current.addEventListener("scroll",throttle(()=>{
+      const {scrollTop,clientHeight} = mainRef.current;
       if (scrollTop>=clientHeight) 
       {
         upBtn.current.classList.add(styles.active);      
@@ -29,25 +29,15 @@ export default function Home() {
       else{
         upBtn.current.classList.remove(styles.active);   
       }
-    },300))
+    },100))
   },[])
-
-
-  useEffect(()=>{
-    let timer = setTimeout(() => {
-      mainRef.current.style.display = 'unset';
-    }, 4300);
-
-    return ()=>clearTimeout(timer);
-  },[]);
-
 
   return (
     <>
-      <Header/>
+      <Header mainRef={mainRef}/>
       <main className={styles.main} ref={mainRef}>
 
-          <Hero/>
+          <Hero mainRef={mainRef}/>
           <section className={styles.content} ref={content}>
               <a href="#home">
                 <button className={styles.goUp} ref={upBtn}>

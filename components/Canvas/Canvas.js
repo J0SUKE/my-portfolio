@@ -8,7 +8,7 @@ import gsap from 'gsap'
 import { throttle } from 'lodash';
 import isMobile from '../../utils/isMobile';
 
-export default function Canvas() {
+export default function Canvas({mainRef}) {
   
   const canvas = useRef();
   const canvasContainer = useRef();
@@ -302,7 +302,9 @@ export default function Canvas() {
     let initialTop = 0;
 
     function resetCameraPosition() {
-        const {scrollTop,clientHeight} = document.documentElement;   
+        const {scrollTop} = mainRef.current;   
+        const {clientHeight} = document.documentElement;
+        
         let ratio = scrollTop/clientHeight;
         let initailPos = 0.3-Math.sin(ratio);
         
@@ -324,12 +326,14 @@ export default function Canvas() {
     }
 
     function handleScroll() {
-        const {scrollTop,clientHeight} = document.documentElement;   
+        const {scrollTop} = mainRef.current;   
+        const{clientHeight} = document.documentElement;
+        
         if (scrollTop>clientHeight) return;
 
         let ratio = scrollTop/clientHeight;
         if (animating) {
-            window.scrollTo(0,initialTop);
+            mainRef.current.scrollTo(0,initialTop);
         }
         if (ratio<=1 && !animating) {
             camera.position.y = 0.3-Math.sin(ratio);    
@@ -338,7 +342,7 @@ export default function Canvas() {
 
     canvas.current.addEventListener("mouseup",throttle(()=>{resetCameraPosition()}))
     canvas.current.addEventListener("touchend",throttle(()=>{resetCameraPosition()}));
-    window.addEventListener("scroll",throttle(()=>{handleScroll()},10))
+    mainRef.current.addEventListener("scroll",throttle(()=>{handleScroll()},10))
 
     const controls = new OrbitControls( camera, canvas.current );
     controls.enableZoom =false;

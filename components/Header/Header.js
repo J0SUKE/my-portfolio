@@ -5,10 +5,9 @@ import { throttle } from 'lodash';
 import isMobile from '../../utils/isMobile';
 
 
-export default function Header() {
+export default function Header({mainRef}) {
     
     const headerRef = useRef();
-    const [headerClass,setHeaderClass] = useState("");
     let lastScroll = useRef(0);
     
     useEffect(()=>{
@@ -16,38 +15,37 @@ export default function Header() {
 
         function headerScrollDesktop() {
             
-            const {scrollTop} = document.documentElement;   
+            const {scrollTop} = mainRef.current;   
             let deltaScroll = scrollTop - lastScroll.current;
 
             if (scrollTop==0) 
             {
-                setHeaderClass(styles.static);                
+                headerRef.current.className = `${styles.headerContainer} ${styles.static}`;       
                 return;
             }
 
             if (deltaScroll>0) // on scroll vers le haut (en direction du bas)
             {
-                setHeaderClass(styles.scrollUp)
+                headerRef.current.className = `${styles.headerContainer} ${styles.scrollUp}`;
             }
             else if(deltaScroll<0)
             {
-                setHeaderClass(styles.scrollDown);
+                headerRef.current.className = `${styles.headerContainer} ${styles.scrollDown}`;
             }
             lastScroll.current = scrollTop;
         }
 
         function headerScrollMobile() {
-            const {scrollTop} = document.documentElement;   
-            let deltaScroll = scrollTop - lastScroll.current;
+            const {scrollTop} = mainRef.current;   
 
             if (scrollTop==0) 
             {
-                setHeaderClass(styles.static);                
+                headerRef.current.className = `${styles.headerContainer} ${styles.static}`;
                 return;
             }
             else
             {
-                setHeaderClass(styles.scrollDown);
+                headerRef.current.className = `${styles.headerContainer} ${styles.scrollDown}`;
             }
             
             lastScroll.current = scrollTop;
@@ -55,19 +53,11 @@ export default function Header() {
 
         const scrollFunction = (isMobile() ? headerScrollMobile : headerScrollDesktop);
 
-        window.addEventListener("scroll",throttle(()=>{scrollFunction()}),1000);
-    },[])
-
-    useEffect(()=>{
-        let timer = setTimeout(() => {
-            headerRef.current.style.display = 'unset';
-        }, 4300);
-    
-        return ()=>clearTimeout(timer);
-      },[]);
+        mainRef.current?.addEventListener("scroll",throttle(()=>{scrollFunction()}),1000);
+    },[headerRef])
 
     return (
-        <header className={`${styles.headerContainer} ${headerClass}`} ref={headerRef}>
+        <header className={`${styles.headerContainer}`} ref={headerRef}>
             <div className={styles.header}>
                 <div><p>Jean  Mazouni</p></div>
                 <MenuButton/>

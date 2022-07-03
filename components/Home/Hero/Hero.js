@@ -11,7 +11,7 @@ import ReactMarkdown from 'react-markdown';
 import Canvas from '../../Canvas/Canvas';
 import { useContext } from 'react';
 
-export default function Hero() {
+export default function Hero({mainRef}) {
   
     const {intro,socialMedias} = useContext(AppContext);
 
@@ -43,7 +43,7 @@ export default function Hero() {
                 {intro.attributes.content}
             </ReactMarkdown>
         </div>
-        <Canvas/>
+        <Canvas mainRef={mainRef}/>
         <div className={styles.shortLinks}>
             <ul>
                 <a href="#about"><li></li></a>
