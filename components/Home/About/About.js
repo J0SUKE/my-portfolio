@@ -39,7 +39,7 @@ export default function About() {
         <h1>About</h1>
         <div className={styles.presentation__content}>
             <div className={styles.presentation__content__img} ref={presentationImg}>
-                <img src={getStrapiMedia(about.attributes.image)} alt="" />
+                <img loading="lazy" src={getStrapiMedia(about.attributes.image)} alt="" />
             </div>
             <div className={styles.presentation__content__text} ref={presentationText}>
                 <ReactMarkdown skipHtml={false} rehypePlugins={[rehypeRaw]} >

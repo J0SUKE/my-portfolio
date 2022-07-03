@@ -15,7 +15,7 @@ export default function Contact() {
     <div className={styles.contact} id="contact">
     <div className={styles.contact__content}>
         <div className={styles.contact__content__left}>
-            <img src="/images/programming.svg" alt="" />
+            <img loading="lazy" src="/images/programming.svg" alt="" />
         </div>
         <div className={styles.contact__content__right}>
         <h1>Let&apos;s make something great together.</h1>

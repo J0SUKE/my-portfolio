@@ -49,11 +49,11 @@ export default function Projects() {
                                                 <div className={styles.links}>
                                                     <a href={attributes.demo} target="_blank" rel="noreferrer" tabIndex={-1}>
                                                         <p>SEE LIVE</p>
-                                                        <img src="/images/arrow-up-right.svg" alt="" />
+                                                        <img loading="lazy" src="/images/arrow-up-right.svg" alt="" />
                                                     </a>
                                                     <a href={attributes.github}  target="_blank" rel="noreferrer" tabIndex={-1}>
                                                         <p>GITHUB</p>
-                                                        <img src="/images/arrow-up-right.svg" alt="" />
+                                                        <img loading="lazy" src="/images/arrow-up-right.svg" alt="" />
                                                     </a>
                                                 </div>
                                             </li>
@@ -66,13 +66,13 @@ export default function Projects() {
                     <div className={styles.images_container} ref={imagesContainer}>
                         {
                             currentSlide!=0 ? <button className={styles.btnPrev} onClick={goPrev}>
-                                <img src="/images/arrow-left.svg" alt="" />
+                                <img loading="lazy" src="/images/arrow-left.svg" alt="" />
                             </button> : null
                         }
 
                         {
                             currentSlide<max.current-1 ? <button className={styles.btnNext} onClick={goNext}>
-                                <img src="/images/arrow-right.svg" alt="" />
+                                <img loading="lazy" src="/images/arrow-right.svg" alt="" />
                             </button> : null
                         }
                         <div className={styles.images_caroussel}>
@@ -82,7 +82,7 @@ export default function Projects() {
                                         const {attributes} = item;
                                         return(
                                             <li key={item.id}>
-                                                <img src={getStrapiMedia(attributes.image)} alt="" />
+                                                <img loading="lazy" src={getStrapiMedia(attributes.image)} alt="" />
                                             </li>
                                         )
                                     })

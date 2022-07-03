@@ -34,7 +34,7 @@ export default function Skills() {
                           const {attributes} = item;
                           return (
                           <li ref={addElement} key={item.id}>
-                              <img src={getStrapiMedia(attributes.image)} alt="" />
+                              <img loading="lazy" src={getStrapiMedia(attributes.image)} alt="" />
                               {attributes.name}                            
                           </li>  
                         )
