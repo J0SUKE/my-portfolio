@@ -73,7 +73,7 @@ $menu-left:#E62B33;
     h1{
         transform: translateY(50%);
         opacity: 0;
-        animation: animateP .7s 1s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
+        animation: test2 .7s 6s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
         text-decoration: underline;
         font-size: clamp(1.2rem,3vw,1.5rem);
     }
@@ -86,11 +86,11 @@ $menu-left:#E62B33;
         font-size: clamp(.9rem,2vw,1rem);
         &:first-of-type
         {
-            animation: animateP .7s 1.2s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
+            animation: test2 .7s 6.2s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
         }
         &:nth-of-type(2)
         {
-            animation: animateP .7s 1.4s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
+            animation: test2 .7s 6.4s forwards cubic-bezier( 0.47, 0.18, 0, 0.96 );
         }
     }
 
@@ -100,6 +100,16 @@ $menu-left:#E62B33;
     }
 
     @keyframes animateP {
+        from{
+            transform: translateY(50%);
+            opacity: 0;
+        }to{
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes test2 {
         from{
             transform: translateY(50%);
             opacity: 0;

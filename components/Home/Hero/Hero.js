@@ -14,7 +14,6 @@ import { useContext } from 'react';
 export default function Hero({mainRef}) {
   
     const {intro,socialMedias} = useContext(AppContext);
-
     return (
     <section className={styles.hero} id="home">
         <div className={styles.contact_links}>
