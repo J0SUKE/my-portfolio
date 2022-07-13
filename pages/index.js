@@ -42,7 +42,8 @@ export async function getStaticProps() {
       skills: {
         populate: ['image'],
       }
-    } 
+    },
+    sort:['id:asc']
   })
 
   const projectsQuery = await fetchAPI('/projects',{
