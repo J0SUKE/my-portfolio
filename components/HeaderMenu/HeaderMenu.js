@@ -53,6 +53,8 @@ export default function HeaderMenu() {
                 <Image
                     src={headerBottomImg}
                     alt='me'
+                    layout="fill"
+                    priority={true}
                 />
             </div>
         </menu>
