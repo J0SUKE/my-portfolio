@@ -41,6 +41,9 @@ export default function HeaderMenu() {
             <div className={styles.header_menu__right_img}>
                 <Image
                     src={headerLeftImg}
+                    alt='me'
+                    layout="fill"
+                    priority={true}
                 />
             </div>
             <div className={styles.header_menu__left}>
@@ -49,6 +52,7 @@ export default function HeaderMenu() {
             <div className={styles.header_menu__bottom_img}>
                 <Image
                     src={headerBottomImg}
+                    alt='me'
                 />
             </div>
         </menu>
