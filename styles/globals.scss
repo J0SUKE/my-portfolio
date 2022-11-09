@@ -25,3 +25,19 @@ a
   color: inherit;
   text-decoration: none;
 }
+
+.page-container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.medias
+{
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}

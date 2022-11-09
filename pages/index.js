@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Layout from '../components/Layout/Layout';
 import React from 'react';
 import fetchAPI from '../lib/api'
+import Link from 'next/link';
 
 export const AppContext = React.createContext();
 
@@ -23,7 +24,19 @@ export default function Home({about,skills,projects,intro,socialMedias}) {
           <link rel="icon" href="/favicon.svg" />
         </Head>
         <AppContext.Provider value={AppContextValue}>
-          <Layout about={about}/>
+          <div className='page-container'>
+            <div>
+            <h1>New portfolio comming soon</h1>
+            <ul className='medias'>
+              <li>
+                <a href="https://twitter.com/Jean_mazouni">Twitter</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/jean-mazouni-214803242/">Linkedin</a>
+              </li>
+            </ul>
+            </div>
+          </div>
         </AppContext.Provider>
         
       </>
