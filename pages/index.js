@@ -26,7 +26,7 @@ export default function Home({about,skills,projects,intro,socialMedias}) {
         <AppContext.Provider value={AppContextValue}>
           <div className='page-container'>
             <div>
-            <h1>New portfolio comming soon</h1>
+            <h1>New portfolio coming soon</h1>
             <ul className='medias'>
               <li>
                 <a href="https://twitter.com/Jean_mazouni">Twitter</a>
