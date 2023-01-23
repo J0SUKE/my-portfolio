@@ -34,6 +34,9 @@ export default function Home({about,skills,projects,intro,socialMedias}) {
               <li>
                 <a href="https://www.linkedin.com/in/jean-mazouni-214803242/">Linkedin</a>
               </li>
+              <li>
+              <a href="https://www.instagram.com/jean_mazouni/">Instagram</a>
+              </li>
             </ul>
             </div>
           </div>
